@@ -1,0 +1,111 @@
+key 116   POWER             WAKE_DROPPED
+key 217   SEARCH
+key 158   BACK
+key 102   HOME
+key 139   MENU
+key 68    FUNC_1            WAKE_DROPPED
+
+key 30    A
+
+# column 0
+key 33    F
+key 25    P
+key 38    L
+key 44    Z
+key 46    C
+key 231   CALL
+
+# column 1
+key 31    S
+key 56    ALT_LEFT
+key 32    D
+key 50    M
+key 23    I
+key 18    E
+
+# column 2
+key 19    R
+key 28    ENTER
+key 107   ENDCALL
+key 45    X
+key 22    U
+key 36    J
+
+# column 3
+key 17    W
+key 14    DEL
+key 214   QUECHAR
+key 57    SPACE
+key 16    Q
+key 183   FUNC_1
+key 115   VOLUME_UP         WAKE
+
+# column 4
+key 184   HTC_SHARE
+key 42    SHIFT_LEFT
+key 37    K
+key 15    TAB
+key 24    O
+key 105   DPAD_LEFT
+key 114   VOLUME_DOWN       WAKE
+
+# column 5
+key 48    B
+key 106   DPAD_RIGHT
+key 20    T
+key 103   DPAD_UP
+key 21    Y
+key 35    H
+
+# column 6
+key 34    G
+key 108   DPAD_DOWN
+key 49    N
+key 51    COMMA
+key 47    V
+key 52    PERIOD
+
+key 215   AT
+key 211   FOCUS
+key 212   CAMERA
+
+key 2     1
+key 3     2
+key 4     3
+key 5     4
+key 6     5
+key 7     6
+key 8     7
+key 9     8
+key 10    9
+key 11    0
+
+# not use in vison
+# key 12    MINUS             WAKE_DROPPED
+# key 13    EQUALS            WAKE_DROPPED
+# key 26    LEFT_BRACKET      WAKE_DROPPED
+# key 27    RIGHT_BRACKET     WAKE_DROPPED
+# key 39    SEMICOLON         WAKE_DROPPED
+# key 40    APOSTROPHE        WAKE_DROPPED
+# key 43    BACKSLASH         WAKE_DROPPED
+# key 53    SLASH             WAKE_DROPPED
+# key 54    SHIFT_RIGHT       WAKE
+# key 59    MENU              WAKE_DROPPED
+# key 60    SOFT_RIGHT        WAKE
+# key 61    CALL              WAKE_DROPPED
+# key 62    ENDCALL           WAKE_DROPPED
+# key 68    F10               WAKE_DROPPED
+# key 87    F11               WAKE_DROPPED
+# key 107   ENDCALL           WAKE_DROPPED
+# key 116   POWER             WAKE
+# key 127   SEARCH            WAKE_DROPPED
+# key 155   ENVELOPE          WAKE_DROPPED
+# key 189   FUNC_7            WAKE_DROPPED
+# key 223   CANCEL            WAKE_DROPPED
+# key 227   STAR
+# key 228   POUND             WAKE_DROPPED
+# key 229   MENU              WAKE_DROPPED
+# key 230   SOFT_RIGHT        WAKE
+# key 231   CALL              WAKE_DROPPED
+# key 232   DPAD_CENTER       WAKE_DROPPED
+# key 399   GRAVE
