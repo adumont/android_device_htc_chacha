@@ -111,6 +111,34 @@ PRODUCT_COPY_FILES += \
     device/htc/chacha/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
     device/htc/chacha/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
+# Prebuilt libraries that are needed to build open-source libraries
+PRODUCT_COPY_FILES += \\
+    vendor/htc/chacha/proprietary/libcamera.so:obj/lib/libcamera.so
+
+# All the blobs necessary for chacha
+PRODUCT_COPY_FILES += \\
+    vendor/htc/chacha/proprietary/akmd:/system/bin/akmd \\
+    vendor/htc/chacha/proprietary/AudioFilter.csv:/system/etc/AudioFilter.csv \\
+    vendor/htc/chacha/proprietary/AudioPara4.csv:/system/etc/AudioPara4.csv \\
+    vendor/htc/chacha/proprietary/AudioPara4_WB.csv:/system/etc/AudioPara4_WB.csv \\
+    vendor/htc/chacha/proprietary/AudioPreProcess.csv:/system/etc/AudioPreProcess.csv \\
+    vendor/htc/chacha/proprietary/WPDB.zip:/system/etc/WPDB.zip \\
+    vendor/htc/chacha/proprietary/yamato_pfp.fw:/system/etc/firmware/yamato_pfp.fw \\
+    vendor/htc/chacha/proprietary/yamato_pm4.fw:/system/etc/firmware/yamato_pm4.fw \\
+    vendor/htc/chacha/proprietary/libEGL_adreno200.so:/system/lib/egl/libEGL_adreno200.so \\
+    vendor/htc/chacha/proprietary/libGLESv1_CM_adreno200.so:/system/lib/egl/libGLESv1_CM_adreno200.so \\
+    vendor/htc/chacha/proprietary/libGLESv2_adreno200.so:/system/lib/egl/libGLESv2_adreno200.so \\
+    vendor/htc/chacha/proprietary/libmm-adspsvc.so:/system/lib/libmm-adspsvc.so \\
+    vendor/htc/chacha/proprietary/libOmxH264Dec.so:/system/lib/libOmxH264Dec.so \\
+    vendor/htc/chacha/proprietary/libOmxMpeg4Dec.so:/system/lib/libOmxMpeg4Dec.so \\
+    vendor/htc/chacha/proprietary/libOmxVidEnc.so:/system/lib/libOmxVidEnc.so \\
+    vendor/htc/chacha/proprietary/libcamera.so:/system/lib/libcamera.so \\
+    vendor/htc/chacha/proprietary/libgsl.so:/system/lib/libgsl.so \\
+    vendor/htc/chacha/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \\
+    vendor/htc/chacha/proprietary/libaudioeq.so:/system/lib/libaudioeq.so \\
+    vendor/htc/chacha/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \\
+    vendor/htc/chacha/proprietary/liboemcamera.so:/system/lib/liboemcamera.so
+
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
