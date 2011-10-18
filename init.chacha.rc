@@ -12,6 +12,10 @@ on boot
     chmod 0660 /sys/module/board_chacha/parameters/bluetooth_power_on
     chmod 0660 /sys/class/rfkill/rfkill0/state
 
+    # temp for akm8975
+    chmod 0666 /dev/bma150
+    chmod 0666 /dev/akm8975_daemon
+
     chown bluetooth bluetooth /sys/module/board_chacha/parameters/bdaddr
     setprop ro.bt.bdaddr_path /sys/module/board_chacha/parameters/bdaddr
 
