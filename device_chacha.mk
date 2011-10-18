@@ -78,13 +78,15 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
-    lights.liberty \
+    lights.chacha \
     gralloc.msm7k \
     libOmxCore \
     copybit.msm7k \
-    sensors.liberty \
-    gps.liberty \
+    sensors.chacha \
     com.android.future.usb.accessory
+
+#PRODUCT_PACKAGES += \
+#    gps.chacha 
 
 PRODUCT_COPY_FILES += \
     device/htc/chacha/vold.fstab:system/etc/vold.fstab \
