@@ -41,7 +41,7 @@ key 183   FUNC_1
 key 115   VOLUME_UP         WAKE
 
 # column 4
-key 184   HTC_SHARE
+key 184   FUNC_2
 key 42    SHIFT_LEFT
 key 37    K
 key 15    TAB
