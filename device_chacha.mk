@@ -78,11 +78,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     librs_jni \
-    lights.chacha \
     gralloc.msm7k \
     libOmxCore \
     copybit.msm7k \
-    sensors.chacha \
     com.android.future.usb.accessory
 
 #PRODUCT_PACKAGES += \
