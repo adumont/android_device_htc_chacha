@@ -7,6 +7,8 @@ key 68    FUNC_1            WAKE_DROPPED
 
 key 30    A
 
+key 117   USER1
+
 # column 0
 key 33    F
 key 25    P
@@ -37,11 +39,11 @@ key 14    DEL
 key 214   QUECHAR
 key 57    SPACE
 key 16    Q
-key 183   FUNC_1
+key 183   SYM
 key 115   VOLUME_UP         WAKE
 
 # column 4
-key 184   FUNC_2
+key 184   EXPLORER
 key 42    SHIFT_LEFT
 key 37    K
 key 15    TAB
