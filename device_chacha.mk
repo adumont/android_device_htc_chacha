@@ -28,7 +28,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface = eth0 \
     wifi.supplicant_scan_interval=15 \
     ro.sf.lcd_density = 160 \
-    ro.opengles.version=131072
+    ro.opengles.version=131072 \
+    dalvik.vm.dexopt-data-only=1
 
 # Default network type.
 # 0 => WCDMA preferred.
