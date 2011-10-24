@@ -1,7 +1,7 @@
-USE_CAMERA_STUB := true
-#USE_CAMERA_STUB := false
+#USE_CAMERA_STUB := true
+USE_CAMERA_STUB := false
 #BOARD_USE_FROYO_LIBCAMERA := true
-#JS_ENGINE:=v8
+JS_ENGINE:=v8
 
 # inherit from the proprietary version
 -include vendor/htc/chacha/BoardConfigVendor.mk
@@ -13,7 +13,6 @@ TARGET_BOARD_PLATFORM := msm7k
 TARGET_ARCH_VARIANT := armv6-vfp
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
-# TARGET_CPU_ABI := armeabi
 TARGET_CPU_ABI := armeabi-v6l
 TARGET_CPU_ABI2 := armeabi
 
@@ -60,8 +59,7 @@ TARGET_PREBUILT_KERNEL := device/htc/chacha/kernel
 # Use this flag if the board has a ext4 partition larger than 2gb
 #BOARD_HAS_LARGE_FILESYSTEM := true
 
-BOARD_USES_GENERIC_AUDIO := true
-#BOARD_USES_GENERIC_AUDIO := false
+BOARD_USES_GENERIC_AUDIO := false
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
