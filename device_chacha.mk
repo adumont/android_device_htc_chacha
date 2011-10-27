@@ -82,6 +82,8 @@ PRODUCT_PACKAGES += \
     gralloc.msm7k \
     libOmxCore \
     copybit.msm7k \
+    lights.chacha \
+    sensors.chacha \
     com.android.future.usb.accessory
 
 #PRODUCT_PACKAGES += \
@@ -136,9 +138,7 @@ PRODUCT_COPY_FILES += \
     vendor/htc/chacha/proprietary/libhtc_acoustic.so:/system/lib/libhtc_acoustic.so \
     vendor/htc/chacha/proprietary/libaudioeq.so:/system/lib/libaudioeq.so \
     vendor/htc/chacha/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \
-    vendor/htc/chacha/proprietary/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
     vendor/htc/chacha/proprietary/gps.chacha.so:system/lib/hw/gps.chacha.so \
-    vendor/htc/chacha/proprietary/sensors.chacha.so:system/lib/hw/sensors.chacha.so \
     vendor/htc/chacha/proprietary/liboemcamera.so:/system/lib/liboemcamera.so
 
 # stuff common to all HTC phones
