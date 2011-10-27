@@ -65,6 +65,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -119,6 +120,8 @@ PRODUCT_COPY_FILES += \
 # All the blobs necessary for chacha
 PRODUCT_COPY_FILES += \
     vendor/htc/chacha/proprietary/akmd:/system/bin/akmd \
+    vendor/htc/chacha/proprietary/awb_camera:/system/bin/awb_camera \
+    vendor/htc/chacha/proprietary/lsc_camera:/system/bin/lsc_camera \
     vendor/htc/chacha/proprietary/AudioFilter.csv:/system/etc/AudioFilter.csv \
     vendor/htc/chacha/proprietary/AudioPara4.csv:/system/etc/AudioPara4.csv \
     vendor/htc/chacha/proprietary/AudioPara4_WB.csv:/system/etc/AudioPara4_WB.csv \
