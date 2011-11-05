@@ -11,6 +11,8 @@ on boot
     chown bluetooth bluetooth /sys/module/board_chacha/parameters/bluetooth_power_on
     chmod 0660 /sys/module/board_chacha/parameters/bluetooth_power_on
     chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /dev/ttyMSM2
+    chmod 0600 /dev/ttyMSM2
 
     # perms for akm8975
     chmod 0666 /dev/bma150
@@ -124,7 +126,7 @@ on property:service.ser2net.enable=0
     stop srv_ser2net
 
 service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
-    --baudrate 3000000 --patchram /system/etc/firmware/BCM4329.hcd /dev/ttyHS0
+    --baudrate 3000000 --patchram /system/etc/firmware/bcm4329.hcd /dev/ttyHS0
     user bluetooth
     group bluetooth net_bt_admin
     disabled
