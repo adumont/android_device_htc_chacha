@@ -152,3 +152,5 @@ $(call inherit-product, build/target/product/full_base.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := generic_chacha
 PRODUCT_DEVICE := chacha
+
+DISABLE_DEXPREOPT := false
