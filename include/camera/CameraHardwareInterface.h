@@ -213,6 +213,8 @@ public:
     /** Return the camera parameters. */
     virtual CameraParameters  getParameters() const = 0;
 
+    virtual void setFaceDetectionState(int state) = 0;
+
     /**
      * Send command to camera driver.
      */
