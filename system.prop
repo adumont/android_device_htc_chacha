@@ -4,3 +4,6 @@
 # Don't show IME picker when Sym key is pressed
 # See https://github.com/SuperTeam/android_frameworks_base/commit/78e0d0ed4b9850292856a5720589f58690ebf1f9
 ro.product.sym_ime_picker=disabled
+
+# Tells system the keyboard is fixed, not sliding (see PhoneApp.java)
+ro.product.has_fixed_keyboard=1
