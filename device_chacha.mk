@@ -65,6 +65,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/base/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
@@ -142,7 +143,8 @@ PRODUCT_COPY_FILES += \
     vendor/htc/chacha/proprietary/libhtc_ril.so:/system/lib/libhtc_ril.so \
     vendor/htc/chacha/proprietary/gps.chacha.so:system/lib/hw/gps.chacha.so \
     vendor/htc/chacha/proprietary/sensors.chacha.so:system/lib/hw/sensors.chacha.so \
-    vendor/htc/chacha/proprietary/liboemcamera.so:/system/lib/liboemcamera.so
+    vendor/htc/chacha/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \
+    vendor/htc/chacha/proprietary/libcameraservice.so:/system/lib/libcameraservice.so
 
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
