@@ -7,3 +7,6 @@ ro.product.sym_ime_picker=disabled
 
 # Tells system the keyboard is fixed, not sliding (see PhoneApp.java)
 ro.product.has_fixed_keyboard=1
+
+# adjust the rotation of pictures/movies taken by Camera
+ro.device.screenrotation=90
