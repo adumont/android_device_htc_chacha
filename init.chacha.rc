@@ -87,7 +87,7 @@ on init
     write /sys/module/lowmemorykiller/parameters/check_filepages 1
 
 service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
-    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+    -Dawext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
     socket wpa_eth0 dgram 660 wifi wifi
     disabled
     oneshot
