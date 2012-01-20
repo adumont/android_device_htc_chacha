@@ -95,7 +95,7 @@ PRODUCT_COPY_FILES += \
     device/common/gps/gps.conf_US:system/etc/gps.conf 
 
 PRODUCT_COPY_FILES += \
-    vendor/SuperTeam/mods/common/system/etc/apns-conf.xml:system/etc/apns-conf.xml
+    vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/chacha/kernel
