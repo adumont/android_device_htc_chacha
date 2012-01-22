@@ -11,6 +11,36 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/chacha/overlay
 PRODUCT_COPY_FILES += \
     device/htc/chacha/key/chacha-keypad.kl:system/usr/keylayout/chacha-keypad.kl \
     device/htc/chacha/key/chacha-keypad.kcm.bin:system/usr/keychars/chacha-keypad.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-ara.kcm.bin:system/usr/keychars/chacha-keypad-ara.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-ara.kl:system/usr/keylayout/chacha-keypad-ara.kl \
+    device/htc/chacha/key/chacha-keypad-aw.kcm.bin:system/usr/keychars/chacha-keypad-aw.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-aw.kl:system/usr/keylayout/chacha-keypad-aw.kl \
+    device/htc/chacha/key/chacha-keypad-bopomo.kcm.bin:system/usr/keychars/chacha-keypad-bopomo.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-bopomo.kl:system/usr/keylayout/chacha-keypad-bopomo.kl \
+    device/htc/chacha/key/chacha-keypad-cn.kcm.bin:system/usr/keychars/chacha-keypad-cn.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-cn.kl:system/usr/keylayout/chacha-keypad-cn.kl \
+    device/htc/chacha/key/chacha-keypad-ell.kcm.bin:system/usr/keychars/chacha-keypad-ell.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-ell.kl:system/usr/keylayout/chacha-keypad-ell.kl \
+    device/htc/chacha/key/chacha-keypad-esn.kcm.bin:system/usr/keychars/chacha-keypad-esn.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-esn.kl:system/usr/keylayout/chacha-keypad-esn.kl \
+    device/htc/chacha/key/chacha-keypad-fra.kcm.bin:system/usr/keychars/chacha-keypad-fra.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-fra.kl:system/usr/keylayout/chacha-keypad-fra.kl \
+    device/htc/chacha/key/chacha-keypad-ger.kcm.bin:system/usr/keychars/chacha-keypad-ger.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-ger.kl:system/usr/keylayout/chacha-keypad-ger.kl \
+    device/htc/chacha/key/chacha-keypad-hk.kcm.bin:system/usr/keychars/chacha-keypad-hk.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-hk.kl:system/usr/keylayout/chacha-keypad-hk.kl \
+    device/htc/chacha/key/chacha-keypad-ita.kcm.bin:system/usr/keychars/chacha-keypad-ita.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-ita.kl:system/usr/keylayout/chacha-keypad-ita.kl \
+    device/htc/chacha/key/chacha-keypad-nor.kcm.bin:system/usr/keychars/chacha-keypad-nor.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-nor.kl:system/usr/keylayout/chacha-keypad-nor.kl \
+    device/htc/chacha/key/chacha-keypad-rus.kcm.bin:system/usr/keychars/chacha-keypad-rus.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-rus.kl:system/usr/keylayout/chacha-keypad-rus.kl \
+    device/htc/chacha/key/chacha-keypad-steng.kcm.bin:system/usr/keychars/chacha-keypad-steng.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-steng.kl:system/usr/keylayout/chacha-keypad-steng.kl \
+    device/htc/chacha/key/chacha-keypad-tai.kcm.bin:system/usr/keychars/chacha-keypad-tai.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-tai.kl:system/usr/keylayout/chacha-keypad-tai.kl \
+    device/htc/chacha/key/chacha-keypad-tur.kcm.bin:system/usr/keychars/chacha-keypad-tur.kcm.bin \
+    device/htc/chacha/key/chacha-keypad-tur.kl:system/usr/keylayout/chacha-keypad-tur.kl \
     device/htc/chacha/key/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
 
 PRODUCT_COPY_FILES += \
