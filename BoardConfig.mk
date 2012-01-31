@@ -95,3 +95,6 @@ BOARD_USE_NEW_LIBRIL_HTC := true
 # BOARD_USES_QCOM_LIBRPC := true
 
 TARGET_SPECIFIC_HEADER_PATH := device/htc/chacha/include
+
+WITH_DEXPREOPT := true
+
