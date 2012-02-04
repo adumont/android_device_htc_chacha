@@ -62,6 +62,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x09600000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_HAS_JANKY_BACKBUFFER := true
+BOARD_CUSTOM_GRAPHICS := ../../../device/htc/chacha/recovery/graphics.c
 
 TARGET_PREBUILT_KERNEL := device/htc/chacha/kernel
 
