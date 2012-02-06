@@ -140,6 +140,9 @@ PRODUCT_COPY_FILES += \
     device/htc/chacha/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
     device/htc/chacha/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin
 
+PRODUCT_COPY_FILES += \
+    device/htc/chacha/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES += \
     vendor/htc/chacha/proprietary/libcamera.so:obj/lib/libcamera.so
