@@ -66,6 +66,8 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/htc/chacha/recovery/graphics.c
 
 TARGET_PREBUILT_KERNEL := device/htc/chacha/kernel
 
+TARGET_RECOVERY_INITRC := device/htc/chacha/recovery/init.rc
+
 #BOARD_HAS_NO_SELECT_BUTTON := true
 # Use this flag if the board has a ext4 partition larger than 2gb
 #BOARD_HAS_LARGE_FILESYSTEM := true

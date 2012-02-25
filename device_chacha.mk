@@ -176,6 +176,13 @@ PRODUCT_COPY_FILES += \
     vendor/htc/chacha/proprietary/liboemcamera.so:/system/lib/liboemcamera.so \
     vendor/htc/chacha/proprietary/libcameraservice.so:/system/lib/libcameraservice.so
 
+# Battery charge only mode
+PRODUCT_COPY_FILES += \
+    vendor/htc/chacha/proprietary/choice_fn:recovery/root/sbin/choice_fn \
+    vendor/htc/chacha/proprietary/power_test:recovery/root/sbin/power_test \
+    vendor/htc/chacha/proprietary/offmode_charging:recovery/root/sbin/offmode_charging \
+    vendor/htc/chacha/proprietary/detect_key:recovery/root/sbin/detect_key
+
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
