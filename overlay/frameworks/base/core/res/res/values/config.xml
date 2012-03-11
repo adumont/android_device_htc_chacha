@@ -357,4 +357,6 @@
     <integer name="config_datause_notification_type">2</integer>
     <bool name="config_animateScreenLights">true</bool>
     <bool name="config_rilNeedsNullPath">true</bool>
+
+    <string name="symbol_picker_sym">%\u00A5\u2022\u00AE\u00A9\u00B1[]{}\u003C>`^\\|</string>
 </resources>
