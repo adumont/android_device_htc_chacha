@@ -7,3 +7,9 @@ ro.product.sym_ime_picker=disabled
 
 # adjust the rotation of pictures/movies taken by Camera
 ro.device.screenrotation=90
+
+# Tweaks
+persist.sys.scrollingcache=2
+persist.sys.use_dithering=1
+persist.sys.purgeable_assets=1
+ro.compcache.default=0
