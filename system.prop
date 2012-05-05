@@ -1,9 +1,6 @@
 #
 # system.prop for chacha
 #
-# Don't show IME picker when Sym key is pressed
-# See https://github.com/SuperTeam/android_frameworks_base/commit/78e0d0ed4b9850292856a5720589f58690ebf1f9
-ro.product.sym_ime_picker=disabled
 
 # adjust the rotation of pictures/movies taken by Camera
 ro.device.screenrotation=90
