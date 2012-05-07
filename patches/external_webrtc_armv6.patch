@@ -1,0 +1,46 @@
+ .../main/interface/spl_inl.h                       |   15 ++++++++++++---
+ 1 files changed, 12 insertions(+), 3 deletions(-)
+
+diff --git a/src/common_audio/signal_processing_library/main/interface/spl_inl.h b/src/common_audio/signal_processing_library/main/interface/spl_inl.h
+index 8716ca9..9b46465 100644
+--- a/src/common_audio/signal_processing_library/main/interface/spl_inl.h
++++ b/src/common_audio/signal_processing_library/main/interface/spl_inl.h
+@@ -19,10 +19,19 @@
+ 
+ #ifdef WEBRTC_ANDROID
+ 
++/*
++ * The gcc compiler, reports that several instructions aren't supported by the
++ * platform you try to compile the code for. Even if these are supported by
++ * armv5 extension so are present in armv6. So tell it we're armv7.
++ */
++__asm (
++"   .arch armv7-a\n"
++);
++
+ WEBRTC_INLINE WebRtc_Word32 WEBRTC_SPL_MUL(WebRtc_Word32 a, WebRtc_Word32 b)
+ {
+     WebRtc_Word32 tmp;
+-    __asm__("mul %0, %1, %2":"=r"(tmp):"r"(a), "r"(b));
++    __asm__("smmul %0, %1, %2":"=r"(tmp):"r"(a), "r"(b)); //changed mul to smmul.
+     return tmp;
+ }
+ 
+@@ -66,7 +75,7 @@ WEBRTC_INLINE WebRtc_Word16 WebRtcSpl_AddSatW16(WebRtc_Word16 a,
+ {
+     WebRtc_Word32 s_sum;
+ 
+-    __asm__("qadd16 %0, %1, %2":"=r"(s_sum):"r"(a), "r"(b));
++    __asm__("qadd %0, %1, %2":"=r"(s_sum):"r"(a), "r"(b));
+ 
+     return (WebRtc_Word16) s_sum;
+ }
+@@ -86,7 +95,7 @@ WEBRTC_INLINE WebRtc_Word16 WebRtcSpl_SubSatW16(WebRtc_Word16 var1,
+ {
+     WebRtc_Word32 s_sub;
+ 
+-    __asm__("qsub16 %0, %1, %2":"=r"(s_sub):"r"(var1), "r"(var2));
++    __asm__("qsub %0, %1, %2":"=r"(s_sub):"r"(var1), "r"(var2));
+ 
+     return (WebRtc_Word16)s_sub;
+ }

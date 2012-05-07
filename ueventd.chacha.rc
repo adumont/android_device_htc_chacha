@@ -1,0 +1,67 @@
+/dev/system_bus_freq    0660    system      system
+/dev/cpu_dma_latency    0660    system      system
+
+# ADB
+/dev/android_adb          0660   adb        adb
+/dev/android_adb_enable   0660   adb        adb
+
+# G-Sensor and compass
+/dev/akm8975_daemon       0640    compass     system
+/dev/akm8975_aot          0640    compass     system
+/dev/bma150               0640   compass    system
+/dev/cm3602               0640   compass    system
+
+# Bluetooth
+/dev/ttyMSM0              0600   bluetooth  bluetooth
+/dev/ttyMSM1              0600   bluetooth  bluetooth
+/dev/ttyMSM2              0600   bluetooth  bluetooth
+/dev/ttyHS0               0600   bluetooth  bluetooth
+/dev/uinput               0660   system     bluetooth
+
+# Camera
+/dev/msm_camera/*         0660   media      system
+
+# Graphics
+/dev/kgsl-3d0             0666   root       root
+/dev/genlock              0666   root       root
+/dev/pmem                 0660   system     graphics
+/dev/pmem_adsp*           0660   system     audio
+/dev/graphics/*           0660   media      graphics
+/dev/msm_vidc*            0660   system     graphics
+
+# Audio
+/dev/adsp/*               0660   system     audio
+/dev/msm_aac              0660   system     audio
+/dev/msm_audpre           0660   system     audio
+/dev/msm_mp3              0660   system     audio
+/dev/msm_pcm_out*         0660   system     audio
+/dev/msm_pcm_in*          0660   system     audio
+/dev/msm_pcm_ctl*         0660   system     audio
+/dev/msm_snd*             0660   system     audio
+
+# Radio
+/dev/qmi                  0640   radio      radio
+/dev/qmi0                 0640   radio      radio
+/dev/qmi1                 0640   radio      radio
+/dev/qmi2                 0640   radio      radio
+/dev/smd0                 0640   radio      radio
+/dev/htc-acoustic         0660   system     audio
+/dev/alarm                0664   system     radio
+/dev/oncrpc/*             0660   system     radio
+
+/dev/tty                  0660   root       system
+/dev/input/*              0660   root       input
+/dev/lightsensor          0640   system     system
+/dev/bus/usb/*            0660   root       usb
+
+/dev/pmem_smipool         0660   system     audio
+/dev/pmem_venc            0660   system     audio
+/dev/gemini*              0660   system     audio
+/dev/audience_a1026*      0660   system     audio
+/dev/tpa2018d1*           0660   system     audio
+/dev/msm_audio_ctl        0660   system     audio
+/dev/qemu_trace           0666   system     system
+
+/dev/radio_feedback       0660   radio      radio
+/dev/smd9                 0600   system     system
+

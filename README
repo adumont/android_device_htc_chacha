@@ -1,0 +1,90 @@
+Device configuration for the HTC Chacha ICS
+
+Initially Kanged from Andreas Schneider's Device configuration for the HTC Marvel
+
+Copyright (C) 2011 The CyanogenMod Project
+Copyright (C) 2011 Andreas Schneider <asn@cryptomilk.org>
+Copyright (C) 2012 Alexandre Dumont <adumont@gmail.com>
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+------------------------------------------------------------------
+Original Stuff from Marvel:
+
+* Description
+
+  This repository is for CM9 on HTC marvel.
+  It is still a work in progress.
+
+
+* Boardinfo
+
+  - Touchscreen
+    Cypress CY8C_TMA
+
+  - Sensors
+    Gsensor: BOSCH_BMA150
+    Compass: AKM8975
+    Battery: TPS65200
+    Light:   CM3602
+
+
+* How To Build CM9 for HTC Marvel
+
+  - Make a workspace
+
+  $ mkdir -p ~/cyanogenmod/system
+  $ cd ~/cyanogenmod/system
+
+
+  - Do repo init & sync
+
+  $ repo init -u git://github.com/CyanogenMod/android.git -b ics
+
+
+  - Create .repo/local_manifest.xml with the following content:
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <manifest>
+      <remote  name="cryptomilk"
+               fetch="git://git.cryptomilk.org/" />
+
+      <project name="CyanogenMod/android_device_htc_common" path="device/htc/common" revision="refs/heads/gingerbread" />
+      <project name="projects/marvel/android_device_htc_marvel.git" path="device/htc/marvel" remote="cryptomilk" />
+      <project name="projects/marvel/android_vendor_htc_proprietary.git" path="vendor/htc" remote="cryptomilk" />
+      <project name="projects/marvel/kernel_htc_msm7227.git" path="kernel/htc/msm7227" remote="cryptomilk" />
+  </manifest>
+
+  $ repo sync
+
+
+  - Setup vendor
+
+  $ ./vendor/cm/get-prebuilts
+
+
+  - Setup environment
+
+  $ source build/envsetup.sh
+  $ lunch cm_marvel-eng
+
+
+  - Build CM9
+
+  $ export USE_CCACHE=1
+  $ make -j4 bacon
+
+
+* Thanks
+
+  CyanogenMod
+  alquez
+  Droste
+  pabloPL
+
+----
+EOF

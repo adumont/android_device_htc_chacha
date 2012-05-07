@@ -1,0 +1,67 @@
+From 8451212658aa6b0acd54186d00c6d2cf64a3037f Mon Sep 17 00:00:00 2001
+From: Andreas Schneider <asn@cryptomilk.org>
+Date: Mon, 9 Apr 2012 16:18:55 +0200
+Subject: [PATCH] bionic: Add NASTY_PTHREAD_CREATE_HACK
+
+Change-Id: I7366a3c3b0dbd9a57c1d16f573404beded8efe79
+
+Signed-off-by: Andreas Schneider <asn@cryptomilk.org>
+---
+ libc/Android.mk        |    4 ++++
+ libc/bionic/pthread.c  |    8 ++++++++
+ libc/include/pthread.h |    5 +++++
+ 3 files changed, 17 insertions(+)
+
+diff --git a/libc/Android.mk b/libc/Android.mk
+index cb0c336..3517697 100644
+--- a/libc/Android.mk
++++ b/libc/Android.mk
+@@ -563,6 +563,10 @@ ifeq ($(TARGET_ARCH),arm)
+ libc_crt_target_cflags += -DCRT_LEGACY_WORKAROUND
+ endif
+ 
++ifeq ($(BOARD_USE_NASTY_PTHREAD_CREATE_HACK),true)
++  libc_common_cflags += -DNASTY_PTHREAD_CREATE_HACK
++endif
++
+ # Define some common includes
+ # ========================================================
+ libc_common_c_includes := \
+diff --git a/libc/bionic/pthread.c b/libc/bionic/pthread.c
+index 3435d21..0c8677e 100644
+--- a/libc/bionic/pthread.c
++++ b/libc/bionic/pthread.c
+@@ -386,6 +386,14 @@ int pthread_create(pthread_t *thread_out, pthread_attr_t const * attr,
+     return 0;
+ }
+ 
++#ifdef NASTY_PTHREAD_CREATE_HACK
++int _debug_pthread_create(void *debug0, void *debug1, pthread_t *thread,
++                          const pthread_attr_t *attr,
++                          void *(*start_routine) (void *), void *arg)
++{
++    return pthread_create(thread, attr, start_routine, arg);
++}
++#endif
+ 
+ int pthread_attr_init(pthread_attr_t * attr)
+ {
+diff --git a/libc/include/pthread.h b/libc/include/pthread.h
+index 56c48ea..c1a6695 100644
+--- a/libc/include/pthread.h
++++ b/libc/include/pthread.h
+@@ -138,6 +138,11 @@ int pthread_getattr_np(pthread_t thid, pthread_attr_t * attr);
+ 
+ int pthread_create(pthread_t *thread, pthread_attr_t const * attr,
+                    void *(*start_routine)(void *), void * arg);
++#ifdef NASTY_PTHREAD_CREATE_HACK
++int _debug_pthread_create(void *debug0, void *debug1, pthread_t *thread,
++                          const pthread_attr_t *attr,
++                          void *(*start_routine) (void *), void *arg);
++#endif
+ void pthread_exit(void * retval);
+ int pthread_join(pthread_t thid, void ** ret_val);
+ int pthread_detach(pthread_t  thid);
+-- 
+1.7.9.2
+

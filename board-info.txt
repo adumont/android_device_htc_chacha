@@ -1,0 +1,3 @@
+require board=chacha
+require version-bootloader=*
+require version-baseband=*
