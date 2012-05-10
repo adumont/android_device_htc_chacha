@@ -183,6 +183,14 @@ PRODUCT_COPY_FILES += \
     vendor/htc/chacha/proprietary/offmode_charging:recovery/root/sbin/offmode_charging \
     vendor/htc/chacha/proprietary/detect_key:recovery/root/sbin/detect_key
 
+# Live wallpaper packages
+PRODUCT_PACKAGES += \
+    LiveWallpapersPicker
+
+# Publish that we support the live wallpaper feature.
+PRODUCT_COPY_FILES += \
+    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
+
 # stuff common to all HTC phones
 $(call inherit-product, device/htc/common/common.mk)
 
