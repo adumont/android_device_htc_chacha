@@ -3,11 +3,11 @@ key 217   SEARCH
 key 158   BACK
 key 102   HOME
 key 139   MENU
-key 68    FUNC_1            WAKE_DROPPED
+#key 68    FUNC_1            WAKE_DROPPED
 
 key 30    A
 
-key 117   USER1
+#key 117   USER1
 
 # column 0
 key 33    F
@@ -36,14 +36,14 @@ key 36    J
 # column 3
 key 17    W
 key 14    DEL
-key 214   QUECHAR
+#key 214   QUECHAR
 key 57    SPACE
 key 16    Q
 key 183   SYM
 key 115   VOLUME_UP         WAKE
 
 # column 4
-key 184   EXPLORER
+#key 184   EXPLORER
 key 42    SHIFT_LEFT
 key 37    K
 key 15    TAB

@@ -38,7 +38,7 @@ DISABLE_DEXPREOPT := false
 # Keylayouts
 PRODUCT_COPY_FILES += \
     device/htc/chacha/key/chacha-keypad.kl:system/usr/keylayout/chacha-keypad.kl \
-    device/htc/chacha/key/chacha-keypad.kcm.bin:system/usr/keychars/chacha-keypad.kcm.bin \
+    device/htc/chacha/key/chacha-keypad.kcm:system/usr/keychars/chacha-keypad.kcm \
     device/htc/chacha/key/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
     device/htc/chacha/key/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl
 

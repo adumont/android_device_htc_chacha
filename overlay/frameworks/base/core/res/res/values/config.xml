@@ -188,4 +188,6 @@
          Bluetooth Module -->
     <bool name="config_bluetooth_adapter_quick_switch">false</bool>
 
+    <bool name="sym_key_shows_IME_picker">false</bool>
+
 </resources>
