@@ -506,3 +506,13 @@ key PLUS {
     alt:                                '+'
     shift+alt:                          '+'
 }
+
+key SYM {
+    label:                              '0'
+    number:                             '0'
+    base:                               '\uef01'
+    shift, capslock:                    '\uef01'
+    alt:                                '0'
+    shift+alt, capslock+alt:            '\uef01'
+}
+
