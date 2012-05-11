@@ -111,3 +111,6 @@ key 11    0
 # key 231   CALL              WAKE_DROPPED
 # key 232   DPAD_CENTER       WAKE_DROPPED
 # key 399   GRAVE
+
+# Renamed QUECHAR to SLASH as not in use here
+key 214   SLASH

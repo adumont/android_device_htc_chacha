@@ -283,12 +283,12 @@ key AT {
 }
 
 key SLASH {
-    label:                              '/'
-    number:                             '/'
-    base:                               '/'
-    shift:                              '?'
-    alt:                                '?'
-    shift+alt:                          '\\'
+    label:                              '?'
+    number:                             '?'
+    base:                               '?'
+    shift, capslock:                    '?'
+    alt:                                ';'
+    shift+alt, capslock+alt:            ';'
 }
 
 key SPACE {
