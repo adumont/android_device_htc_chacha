@@ -108,8 +108,6 @@ PRODUCT_COPY_FILES += \
 # device specific
 PRODUCT_PACKAGES += \
     lights.chacha \
-    sensors.chacha \
-    gps.chacha \
     camera.chacha \
     audio.a2dp.default \
     audio.primary.chacha \
