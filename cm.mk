@@ -7,6 +7,9 @@ $(call inherit-product, vendor/cm/config/gsm.mk)
 # Inherit device configuration
 $(call inherit-product, device/htc/chacha/chacha.mk)
 
+# Boot animation
+TARGET_BOOTANIMATION_NAME := vertical-320x480
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := chacha
 PRODUCT_NAME := cm_chacha
