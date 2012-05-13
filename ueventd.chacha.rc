@@ -1,6 +1,9 @@
 /dev/system_bus_freq    0660    system      system
 /dev/cpu_dma_latency    0660    system      system
 
+# TTY
+/dev/tty                  0666   root       root
+
 # ADB
 /dev/android_adb          0660   adb        adb
 /dev/android_adb_enable   0660   adb        adb
