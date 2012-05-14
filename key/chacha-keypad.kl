@@ -36,7 +36,7 @@ key 36    J
 # column 3
 key 17    W
 key 14    DEL
-#key 214   QUECHAR
+key 214   SLASH
 key 57    SPACE
 key 16    Q
 key 183   SYM
@@ -111,6 +111,3 @@ key 11    0
 # key 231   CALL              WAKE_DROPPED
 # key 232   DPAD_CENTER       WAKE_DROPPED
 # key 399   GRAVE
-
-# Renamed QUECHAR to SLASH as not in use here
-key 214   SLASH
