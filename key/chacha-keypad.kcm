@@ -481,12 +481,12 @@ key APOSTROPHE {
 }
 
 key STAR {
-    label:                              '*'
-    number:                             '*'
-    base:                               '*'
-    shift:                              '*'
+    label:                              '\t'
+    number:                             '\t'
+    base:                               '\t'
+    shift, capslock:                    '*'
     alt:                                '*'
-    shift+alt:                          '*'
+    shift+alt, capslock+alt:            '*'
 }
 
 key POUND {
