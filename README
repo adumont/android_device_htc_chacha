@@ -20,6 +20,13 @@ Branch	ics
     Change I27f5210d: Prevent Sym key from showing the IME picker
     http://review.cyanogenmod.com/15890
 
+
+Project	CyanogenMod/android_bionic
+Branch	ics
+
+    Change I16d2d4b4: bionic: Add NASTY_PTHREAD_CREATE_HACK
+    http://review.cyanogenmod.com/14045
+
 Project	CyanogenMod/android_packages_apps_Phone
 Branch	ics
 
