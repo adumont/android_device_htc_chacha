@@ -20,6 +20,15 @@ Branch	ics
     Change I27f5210d: Prevent Sym key from showing the IME picker
     http://review.cyanogenmod.com/15890
 
+Project	CyanogenMod/android_packages_apps_Phone
+Branch	ics
+
+    Change If7d00837: Change proximity behaviour for devices with fixed keyboard
+    http://review.cyanogenmod.com/16319
+
+    Change I9d867c26: InCallScreen: change orientation to nosensor
+    http://review.cyanogenmod.com/16320
+
 ------------------------------------------------------------------
 Original Stuff from Marvel:
 

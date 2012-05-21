@@ -30,4 +30,6 @@
     <!-- Enable the onscreen "Dial" button in the emergency dialer. -->
     <bool name="config_show_onscreen_dial_button">true</bool>
 
-  </resources>
+    <!-- Restore proper proximity behaviour -->
+    <bool name="config_device_has_fixed_keyboard">true</bool>
+</resources>
