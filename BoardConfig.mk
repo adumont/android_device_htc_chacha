@@ -94,6 +94,9 @@ BOARD_VENDOR_USE_AKMD := akm8975
 # http://www.slideshare.net/jserv/design-and-concepts-of-android-graphics
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DREFRESH_RATE=60 -DBINDER_COMPAT
 
+# Option for choosing texture target on old Adrenos
+BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
+
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_EGL_CFG := device/htc/chacha/egl.cfg
 USE_OPENGL_RENDERER := true
