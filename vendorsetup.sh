@@ -22,4 +22,5 @@
 
 #add_lunch_combo generic_chacha-userdebug
 #add_lunch_combo generic_chacha-eng
+add_lunch_combo cm_chacha-userdebug
 add_lunch_combo cm_chacha-eng
