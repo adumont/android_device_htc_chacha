@@ -181,8 +181,11 @@
         <item>7</item>
     </integer-array>
 
-    <!-- If this is true, the screen will fade off. -->
-    <bool name="config_animateScreenLights">false</bool>
+    <!-- Values greater or equal to 0 will enable electronbeam screen-on
+         animation with the specified delay (in milliseconds), -1 will disable the
+         animation
+    -->
+    <integer name="config_screenOnAnimation">0</integer>
 
     <!-- Boolean indicating if current platform supports quick switch-on/off of
          Bluetooth Module -->
