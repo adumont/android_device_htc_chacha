@@ -215,8 +215,8 @@ key V {
     number:                             none
     base:                               'v'
     shift, capslock:                    'V'
-    alt:                                ','
-    shift+alt, capslock+alt:            ','
+    alt:                                '\''
+    shift+alt, capslock+alt:            '\''
 }
 
 key W {
