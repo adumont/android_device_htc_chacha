@@ -257,7 +257,7 @@ key Z {
 
 key COMMA {
     label:                              ','
-    number:                             ','
+    number:                             '#'
     base:                               ','
     shift, capslock:                    ','
     alt:                                '#'
@@ -482,7 +482,7 @@ key APOSTROPHE {
 
 key STAR {
     label:                              '\t'
-    number:                             '\t'
+    number:                             '*'
     base:                               '\t'
     shift, capslock:                    '*'
     alt:                                '*'
