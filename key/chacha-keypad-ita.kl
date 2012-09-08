@@ -46,7 +46,7 @@ key 115   VOLUME_UP         WAKE
 #key 184   EXPLORER
 key 42    SHIFT_LEFT
 key 37    K
-key 15    STAR
+key 185    STAR
 key 24    O
 key 105   DPAD_LEFT
 key 114   VOLUME_DOWN       WAKE
