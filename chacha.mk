@@ -25,7 +25,7 @@ $(call inherit-product, device/htc/common/common.mk)
 $(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
 # dalvik heap config for devices with 512MB memory
-$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/chacha/media_a1026.mk)
