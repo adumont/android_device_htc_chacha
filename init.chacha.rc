@@ -1,4 +1,4 @@
-import init.chacha.usb.rc
+import init.msm7x27.usb.rc
 
 on early-init
     #sdcard
@@ -11,8 +11,10 @@ on early-init
 
     #sd-ext
     mkdir /sd-ext 0771 system system
+
     export EXTERNAL_STORAGE /storage/sdcard0
     export SD_EXT_DIRECTORY /sd-ext
+
 
 on early-fs
     # bluetooth power up/down interface
@@ -167,6 +169,23 @@ service akmd /system/bin/akmd
     class main
     user compass
     group compass misc input
+
+
+# compcache - handle at boot
+service compcache /system/bin/handle_compcache
+    class main
+    user root
+    group root
+    disabled
+
+on property:persist.service.zram=10
+    start compcache
+
+on property:persist.service.zram=18
+    start compcache
+
+on property:persist.service.zram=26
+    start compcache
 
 
 service srv_ser2net /system/bin/ser2net -n
