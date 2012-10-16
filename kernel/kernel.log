@@ -1,0 +1,894 @@
+commit 551ced506023b4895fecd680b2fd2f5fc2c3ba2f
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Tue Oct 16 23:29:57 2012 +0200
+
+    config: change ondemand min/max cpu freq
+
+commit af6a818b51fe23b3e2d8ecaeb1a3abe542e5ff69
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Tue Oct 2 18:11:53 2012 +0200
+
+    mach-msm: Add some more memory for kgsl-3d0 (chacha).
+    
+    We got 8 MB from unused camera. The camcorder should still work just fine
+    with 2 MB less.
+
+commit 2151af21364ef7e7dd9db3116605fd1c59ffcebf
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Tue Aug 28 10:07:14 2012 +0200
+
+    drivers: Add msmfb version information for jb libqdutils.
+
+commit 6bfc2b5a338c5d43fa8b6ff695768ef50db4f353
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Wed Aug 22 09:32:24 2012 +0200
+
+    config: Don't force warnings as errors in CM10.
+
+commit de98300066902d3d2966816d5b9be715ad070ed4
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Tue Jun 26 20:22:31 2012 +0200
+
+    mach-msm: Remove unsused pmem_camera device.
+    
+    It is and was never used and gives us more RAM for the camera.
+
+commit 204316db1ce481393281cde2fe8f67afb9ba00ca
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Mon Jun 4 15:40:20 2012 +0200
+
+    config: update Chacha config
+
+commit 825fd8d495e6ce1a4a65fc5b3bc9f43927264cb0
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Jun 3 20:56:33 2012 +0200
+
+    drivers: Fix msm camera msm_pmem_frame_ptov_lookup() lookup.
+
+commit b21dee7d1e8e360f7313093a026f108720b96c7e
+Author: Pat Erley <pat-lkml@erley.org>
+Date:   Tue May 8 07:48:09 2012 -0400
+
+    Replace ramzswap with zram
+    
+    This merges the git zram from
+    
+       https://code.google.com/p/compcache/
+    
+    and removes ramzswap.
+    
+    Signed-off-by: Pat Erley <pat-lkml@erley.org>
+    Signed-off-by: Andreas Schneider <asn@cryptomilk.org>
+
+commit dc5291607ae1ac4b0fd950d3112ba5cf5b8b54a2
+Author: Pat Erley <pat-lkml@erley.org>
+Date:   Tue May 8 07:48:08 2012 -0400
+
+    Add HTC TP Calibration
+    
+    While it doesn't seem to be populated on liberty, we have the ATAG
+    for it, so at least pretend to care about it.
+    
+    Signed-off-by: Pat Erley <pat-lkml@erley.org>
+    Signed-off-by: Andreas Schneider <asn@cryptomilk.org>
+
+commit 573868d31c7023f2130d3c19f02dabcf0f9a4cd8
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Mon May 7 08:30:48 2012 +0200
+
+    mach-msm: Add some more memory for kgsl-3d0.
+    
+    We got 8 MB from unused camera. The camcorder should still work just fine
+    with 2 MB less.
+
+commit 7d7a4232b9cf8078fb67158d0929bf9d9d932d32
+Author: Brian Gix <bgix@codeaurora.org>
+Date:   Sun May 6 17:26:15 2012 +0200
+
+    Bluetooth: Fix kernel hci_dev_open timeout reset
+    
+    Handle -EALREADY error in hci_sock of hci_dev_open as indication that
+    the HCI device is already open. This was causing reset inducing timeout,
+    and removed unused/useless check of failure in power-up code.
+    
+    Signed-off-by: Brian Gix <bgix@codeaurora.org>
+    (cherry picked from commit 9bb9d38e700c8deb08f6347f43be250b9ec9e3be)
+    
+    Change-Id: Id42c5acf37bb5657c898fb358bc2f45621ea5044
+    Signed-off-by: Oguri, Srivalli <oguri@codeaurora.org>
+
+commit 6b0d2d5a79b6d84d62329c18d05fc2b89c318154
+Author: Tobias Droste <tdroste@gmx.de>
+Date:   Sat May 5 05:34:35 2012 +0200
+
+    mach-msm: Remove unsused pmem_camera device.
+    
+    It is and was never used and gives us more RAM for the camera.
+    
+    Signed-off-by: Tobias Droste <tdroste@gmx.de>
+    Signed-off-by: Andreas Schneider <asn@cryptomilk.org>
+
+commit 00631e332a0ec95149f5b40cbef8f70b62d78b9e
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Wed May 2 13:40:26 2012 +0200
+
+    arm: Change frequency table to have more sane values.
+    
+    We want lower frequecies for less battery drain and don't want to toast
+    it with values which are too high for the cpu.
+
+commit aeb552e0846bfb091398ae8ee029225635e4f599
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Mon Jun 4 15:23:20 2012 +0200
+
+    drivers: Update usb gadget
+    
+    original patches from asn@cryptomilk
+
+commit 35595987b083639fad8caca8705990f5274d3745
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Mon Jun 4 15:02:51 2012 +0200
+
+    config: chacha, add NETFILTER_XT_MATCH_QTAGUID
+
+commit b50372237ec9389cedcdff6d79168ddee6cb5ef3
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Tue Apr 17 02:10:47 2012 +0200
+
+    config: Update chacha config
+
+commit c1c46bfb83fc6bcea0d21403c637cffc577fcbba
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Tue Apr 17 02:08:42 2012 +0200
+
+    Fix duplicate function in arm devices_htc.c
+
+commit 78ebcaf2e8a0d0b77af3f38100e6a730c4f83c84
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Mon Apr 16 18:56:03 2012 +0200
+
+    config: Update marvel config.
+    
+    Enable kgsl per process page tables.
+    Enable new usb gadgets.
+
+commit 8050a4a2c796442f1d308744f9926083be3a4803
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Apr 13 13:17:10 2012 +0200
+
+    drivers: Update usb gadgets.
+
+commit 51ebde69ad0b6a68f7dc4a8f6215b84bd4f5b42e
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Mon Apr 9 19:32:22 2012 +0200
+
+    config: Update marvel config.
+
+commit 1db5e68d0592f43c9a8ca17a774fb423573fc6d7
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Mon Apr 9 19:31:44 2012 +0200
+
+    net: Add quota2 netfilter support.
+
+commit a82f1c1b0cfe97ece61245b7c09f347470dd730e
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Apr 8 20:13:53 2012 +0200
+
+    acpu: Disable overclock values which are too high.
+
+commit 7753bc2f1c936808350a0aae65f6d72ea33c90ac
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Wed Apr 4 08:42:30 2012 +0200
+
+    config: Update marvel config.
+
+commit 9af95a2707a06faf8c5ca06e8f34acc910dfa443
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Tue Apr 3 20:45:34 2012 +0200
+
+    Revert "drivers: gpu: Increase kgsl default logging."
+    
+    This reverts commit ff13e8c0dbc5b65681ebcc5a7279b1e7d0924a56.
+
+commit 161ab5b284c58f1927c6c1f2bcd86a641e011166
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Tue Apr 3 20:32:30 2012 +0200
+
+    config: Update marvel config.
+
+commit 1e9474e39aa2b4d576d557a713e9759a124e0f9c
+Author: Tobias Droste <tdroste@gmx.de>
+Date:   Tue Apr 3 08:59:00 2012 +0200
+
+    net: Add qtaguid netfilter support.
+
+commit e27ea4095fc6d15d92dd9e02b051cc0801ee17d4
+Author: Tobias Droste <tdroste@gmx.de>
+Date:   Tue Apr 3 08:58:26 2012 +0200
+
+    kgsl: Add genlock ioctl interface.
+
+commit 79e3134c7830babeadebdae57f13c351b24bd767
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Mar 25 10:29:38 2012 +0200
+
+    config: Update marvel config.
+
+commit df2ad720771d3c70041f57d07214e78936355b6e
+Author: Adam Baranowski <alquez@gmail.com>
+Date:   Sun Mar 25 10:15:39 2012 +0200
+
+    marvel: Fix bluetooth initialization.
+
+commit 03a0d0ec44bf2a170b97573008fac260186c6cdd
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Mar 18 19:35:45 2012 +0100
+
+    Update defconfig.
+
+commit 36332a822e975437b8f8228175d29cb5a0b4b6bb
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Jan 29 19:32:29 2012 +0100
+
+    arm: Add cm marvel defconfig.
+
+commit 6b50451c6013667d33f3b81fae417d3fb64e7c94
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Wed Jan 25 16:05:42 2012 +0100
+
+    mach-msm: Initialize updated kgsl driver.
+
+commit f76333488c4c981b3f0684f226e70ee575454f8a
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Wed Jan 25 09:24:05 2012 +0100
+
+    mach-msm: Update marvel board configs.
+
+commit 85c1b3e86e3289afbf0653b11ca4d6ddd0a33d3d
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 27 11:59:10 2012 +0100
+
+    drivers: gpu: Increase kgsl default logging.
+
+commit 012d2d1db47ec5ebfa1f27b87c2078ec54eb43fb
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 27 12:05:13 2012 +0100
+
+    drivers: Remove old kgsl driver.
+
+commit 6381967bda19ca6186fcb20b2e14d8ee51af4526
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 20 20:59:32 2012 +0100
+
+    drivers: gpu: Add latest msm kgsl driver.
+
+commit d9ebfda2431b53af2a985b4d58f9e469edee827b
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Jan 29 21:46:00 2012 +0100
+
+    lib: Update memory allocators.
+
+commit 12e4a3c4da68a75331d72857c1d66459ecdfd673
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Mon Jan 23 13:44:13 2012 +0100
+
+    drivers: Add an updated cy8c_tma touchscreen driver for ics.
+
+commit ea3cc2f06ce7a3b5dc9dd42d9af145cf78408074
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Sun Jan 22 11:23:45 2012 +0100
+
+    Add genlock and msm related changes
+    
+    Conflicts:
+    
+        arch/arm/mach-msm/memory.c
+
+commit 0e5fa0d072e9d55560c61180b4376d694030b3b9
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 27 12:31:35 2012 +0100
+
+    mm: Update ashmem implementation.
+
+commit 9ba9097c6ed06bfd898d768a8961ccc146143808
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 20 20:56:40 2012 +0100
+
+    mach-msm: Add internal_power_rail.
+
+commit 67c2b28fc1accb4f367a46de77d1e71c9240692a
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 20 20:56:11 2012 +0100
+
+    wait: Add wait_io_event_interruptible.
+
+commit 5e243def67df2d7ca1059ef18c19198e7e9c25f9
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 20 20:55:16 2012 +0100
+
+    mach-msm: Add msm_bus.h.
+
+commit 9b6bc5c586ef3dbacd05d29b319dd108ae971f38
+Author: Andreas Schneider <asn@cryptomilk.org>
+Date:   Fri Jan 20 20:54:39 2012 +0100
+
+    mach-msm: Add clk_round_rate().
+
+commit 877407bf1c32536e9059f03f642f7e6c3764a91f
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Fri Feb 10 01:11:24 2012 +0100
+
+    chacha: updated superosr-chacha_defconfig
+
+commit 29fb3db015d67e4a84e5c17a3f52b21076a4adbd
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Sat Dec 31 17:09:05 2011 +0100
+
+    Add superosr-chacha_defconfig for HTC Chacha
+
+commit e7185be2f06c2c967e18303aca5511debed6508f
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Sat Dec 31 17:03:24 2011 +0100
+
+    Modified include/linux/msm_mdp.h
+
+commit c0b63f12fee4e90a96d6fd9f21108a4f29013ea0
+Author: Alexandre Dumont <adumont@gmail.com>
+Date:   Tue Nov 1 22:45:50 2011 +0100
+
+    Changes for HTC Chacha (contributed)
+
+commit 3d7755014b90d4f59511600b8b72a958b04cac62
+Author: Ladios Jonquil <ladios.jonquil@gmail.com>
+Date:   Fri Jun 10 08:04:36 2011 +0800
+
+    liberty: Expose bdaddr in the right board path (via Kali-)
+
+commit 0cce8e4404f001beb014cd844f0acc807adb1685
+Author: Ladios Jonquil <ladios.jonquil@gmail.com>
+Date:   Sat May 28 08:27:09 2011 +0800
+
+    input: misc: gpio_matrix: Don't suspend if not detect_phone_status
+    
+    Make gpio matrix func behaves the old way in which it doesn't set
+    irq wake status if board's keypad matrix has detect_phone_status
+    disabled, so trackpad/vol-buttons wake can fully function.
+    
+    (via arco)
+
+commit bea4c8d75a1d4917742b2fdad57632f210adc109
+Author: Ladios Jonquil <ladios.jonquil@gmail.com>
+Date:   Sat May 21 04:03:06 2011 +0800
+
+    usb: gadget: diag: Add a missing #endif
+
+commit 62382c4b7c097bc21f698aeec8f15fb91312f4ed
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Thu May 26 03:21:34 2011 -0400
+
+    input: touchscreen: Add Synaptics T1021 driver
+
+commit a6d392222595695335cb712ffe8858c989b62683
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Thu May 26 03:01:01 2011 -0400
+
+    input: touchscreen: Use HTC's Synaptics driver variant
+
+commit dc11d93afe9d381b42bc6d405c5373486194fde7
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Wed May 25 11:59:52 2011 -0400
+
+    cm: Add cyanogen_msm7227_defconfig
+
+commit d4f6a9850152e1622e69ab36e7e0738dd9900339
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Mon May 16 08:57:17 2011 -0400
+
+    msm: cpufreq: Add missing cpufreq_attr
+    
+    (via BuzzBumbleBee)
+
+commit b9385c325c462d4f3c3b7e70ab82922c79a0d948
+Author: Shubhraprakash Das <sadas@codeaurora.org>
+Date:   Mon Mar 21 14:28:07 2011 -0600
+
+    ashmem: Fix flush routine of ashmem
+    
+    The ashmem flush function ashmem_flush_cache_range was calling
+    dmac_clean_range and dmac_flush_range with a user virtual address
+    which is not allowed. Instead of calling dmac_clean_range or
+    dmac_flush_range use flush_cache_user_range which can be called
+    with a user vitual address.
+    
+    Change-Id: I5dd137fb248b45ef2c7ea5f7bdb4b540b8310af9
+    Signed-off-by: Shubhraprakash Das <sadas@codeaurora.org>
+
+commit 8573b4fd38a935d46a7b429e379dc59ba4eca0d5
+Author: Kasper Pedersen <kkp2010@kasperkp.dk>
+Date:   Wed Oct 20 15:55:15 2010 -0700
+
+    time: Compensate for rounding on odd-frequency clocksources
+    
+    When the clocksource is not a multiple of HZ, the clock will be off.  For
+    acpi_pm, HZ=1000 the error is 127.111 ppm:
+    
+    The rounding of cycle_interval ends up generating a false error term in
+    ntp_error accumulation since xtime_interval is not exactly 1/HZ.  So, we
+    subtract out the error caused by the rounding.
+    
+    This has been visible since 2.6.32-rc2
+    	commit a092ff0f90cae22b2ac8028ecd2c6f6c1a9e4601
+    	time: Implement logarithmic time accumulation
+    That commit raised NTP_INTERVAL_FREQ and exposed the rounding error.
+    
+    testing tool: http://n1.taur.dk/permanent/testpmt.c
+    Also tested with ntpd and a frequency counter.
+    
+    Change-Id: Iae33aab0d606414628adddd9a84bf40a6997cb2f
+    Signed-off-by: Kasper Pedersen <kkp2010@kasperkp.dk>
+    Acked-by: john stultz <johnstul@us.ibm.com>
+    Cc: John Kacur <jkacur@redhat.com>
+    Cc: Clark Williams <williams@redhat.com>
+    Cc: Martin Schwidefsky <schwidefsky@de.ibm.com>
+    Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
+    Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
+    Signed-off-by: Jeff Ohlstein <johlstei@codeaurora.org>
+
+commit 387f702abb0c1eef4ee09a954be15ea058777ef1
+Author: Christopher Lais <zinx+github@zenthought.org>
+Date:   Mon May 16 22:00:14 2011 -0400
+
+    ganeth: better gannet device
+
+commit 6680d1bdca64ce6e395b8e323b8f358cb26973ec
+Author: Paolo Valente <paolo.valente@unimore.it>
+Date:   Tue Mar 22 12:21:35 2011 +0100
+
+    Switch from BFQ-v2 to BFQ-v2-r1.
+    
+    Improvements:
+    
+    When the first new request for the active queue arrives during disk idling,
+    the device is not immediately unplugged if this request is small. This prevents
+    the disk to be immediately committed to serve a small request. In fact, further
+    requests are likely to be merged to this one quickly, after which the device is
+    unplugged by some block layer function and larger requests are dispatched.
+    
+    The idling timeout and the weight-raising max time have been tuned a little bit
+    too, as detailed below.
+    
+    Reduced a little bit the disk idling timeout for weight-raised
+    queues. This helps reduce latencies for applications made of several
+    processes that do something and then pass the token to the next
+    process. By reducing the timeout we reduce the time that may be wasted
+    to wait for the next request of a process that has just passed the token,
+    and hence that will not issue any new request.
+    
+    Reduced the weight-raising max time from 8 to 7.5 seconds: this
+    reduces a little bit the time interval during which a just-started
+    disk-bound process may unproperly be weight-raised.
+
+commit 22ce104f9ba91e9cdc3a621c98c65e6541b35f8c
+Author: thalamus <willtisdale@gmail.com>
+Date:   Mon Mar 21 19:13:26 2011 +0000
+
+    Updated BFQ to v2.
+
+commit d8ae08ebdf25c2d2db24b73044ea2bf5c2665a5e
+Author: paolo <paolo.valente@unimore.it>
+Date:   Fri Jul 2 16:53:47 2010 +0200
+
+    block: introduce the BFQ I/O scheduler
+    
+    Add the BFQ-v1-r1 I/O scheduler to 2.6.35.
+    The general structure is borrowed from CFQ, as much of the code. A (bfq_)queue
+    is associated to each task doing I/O on a device, and each time a scheduling
+    decision has to be taken a queue is selected and it is served until it expires.
+    
+    The main differences are:
+         - slices are given in the service domain: tasks are assigned budgets,
+           measured in number of sectors. Once got the disk, a task must
+           however consume its assigned budget within a configurable maximum time
+           (by default, the maximum possible value of the budgets is automaticall
+           computed to comply with this timeout). This allows the desired latency
+           vs "throughput boosting" tradeoff to be set.
+    
+        - Budgets are scheduled according to a variant of WF2Q+, implemented
+          using an augmented rb-tree to take eligibility into account while
+          preserving an O(log N) overall complexity.
+    
+        - BFQ supports full hierarchical scheduling, exporting a cgroups
+          interface.  Each node has a full scheduler, so each group can
+          be assigned its own ioprio and an ioprio_class.
+    
+        - If the cgroups interface is used, weights can be explictly assigned,
+          otherwise ioprio values are mapped to weights using the relation
+          weight = IOPRIO_BE_NR - ioprio.
+    
+        - ioprio classes are served in strict priority order, i.e., lower
+          priority queues are not served as long as there are higher priority
+          queues.  Among queues in the same classes the bandwidth is distributed
+          in proportion to the weights of each queue.
+    
+    Regarding what has not changed it is worth noting:
+        - the handling of cfq_io_contexts to associate queues to tasks.
+          Much
+          of the code has been reused just renaming it.  (There is room for
+          code sharing with CFQ but we wanted to minimize the impact of this
+          patch.)
+    
+        - The handling of async queues.
+    
+        - The handling of idle windows.
+    
+        - The handling of merging.
+    
+        - The heuristics to assert that a task is worth an idle window (with
+          minor modifications to hw_tag/CIC_SEEKY detection).
+    
+    Signed-off-by: Fabio Checconi <fabio@gandalf.sssup.it>
+    Signed-off-by: Paolo Valente <paolo.valente@unimore.it>
+    
+    Ported the following commits to bfq:
+        - cfq-iosched: compact io_context radix_tree (80b15c7389caa)
+        - cfq-iosched: remove dead_key from cfq_io_context (bca4b914b5da3d8e)
+
+commit 356b5dc860ad017fb6113bac8e6430e4a22d7adb
+Author: Paolo Valente <paolo.valente@unimore.it>
+Date:   Fri Feb 26 22:19:41 2010 +0100
+
+    block: add cgroups, kconfig and build bits for BFQ
+    
+    Add a Kconfig option and do the related Makefile changes to compile
+    the BFQ I/O scheduler.  Also let the cgroups subsystem know about the
+    BFQ I/O controller.
+    
+    Signed-off-by: Fabio Checconi <fabio@gandalf.sssup.it>
+    Signed-off-by: Paolo Valente <paolo.valente@unimore.it>
+
+commit 4f1b67aa07a327c7cf395bf21a3c779047961c2a
+Author: Paolo Valente <paolo.valente@unimore.it>
+Date:   Fri Feb 26 22:12:15 2010 +0100
+
+    block: prepare I/O context code for BFQ
+    
+    BFQ uses struct cfq_io_context to store its per-process per-device data,
+    reusing the same code for cic handling of CFQ.  The code is not shared
+    ATM to minimize the impact of these patches.
+    
+    This patch introduces a new hlist to each io_context to store all the
+    cic's allocated by BFQ to allow calling the right destructor on module
+    unload; the radix tree used for cic lookup needs to be duplicated
+    because it can contain dead keys inserted by a scheduler and later
+    retrieved by the other one.
+    
+    Update the io_context exit and free paths to take care also of
+    the BFQ cic's.
+    
+    Change the type of cfqq inside struct cfq_io_context to void *
+    to use it also for BFQ per-queue data.
+    
+    A new bfq-specific ioprio_changed field is necessary, too, to avoid
+    clobbering cfq's one, so switch ioprio_changed to a bitmap, with one
+    element per scheduler.
+    
+    Signed-off-by: Fabio Checconi <fabio@gandalf.sssup.it>
+    Signed-off-by: Paolo Valente <paolo.valente@unimore.it>
+    Signed-off-by: Francesco Allertsen <fallertsen@gmail.com>
+
+commit 6bd2570d9a17e0bf2c39e653b524954f10bbdec5
+Author: James Zdziebkowski <snap81@hotmail.com>
+Date:   Wed May 25 11:39:47 2011 -0400
+
+    Update bcm wifi module to 4.218.248.20
+
+commit 8152a0226504332c0b13f8e4e1023aeb68f58ded
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Wed May 25 11:37:21 2011 -0400
+
+    msm: liberty: Add liberty board files
+
+commit a7be08e6f0b5d5945e34c255de8383aabcb903af
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Wed May 25 11:35:55 2011 -0400
+
+    msm: latte: Add latte board files
+
+commit 91b3aeb35705a78ab33c923d24bc9b59804e4423
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Wed May 25 11:34:28 2011 -0400
+
+    wlan: Add a separate header for BCM platform device
+
+commit 3ad5c080ca1b08ea2adf17b05e14553ac7645a60
+Author: Todd Poynor <toddpoynor@google.com>
+Date:   Wed May 25 11:33:35 2011 -0400
+
+    drivers: cpufreq: Add interactive governor
+
+commit 77fe27fe3a49869ae247d9d638e6c28724090a1e
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Thu May 19 20:08:21 2011 +0200
+
+    Update legend defconfig
+
+commit 214bcab65febc3e27f402eb9e9543d3a476f11a2
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Thu May 19 19:47:05 2011 +0200
+
+    Fix build with CONFIG_ARM_UNWIND enabled
+
+commit db3f61a8e88e3ae335670339283b39821f59fcbf
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Thu Jan 13 15:45:41 2011 -0800
+
+    Squashed commits for 2.6.35.13
+
+commit f8e1df3f0472916cd4402e8edff78cc6752a9b98
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Mon Aug 2 18:59:28 2010 -0300
+
+    Squashed commits for 2.6.35.12
+
+commit 7c97cd4fe9730ed14208e8ddfd54a30e46cd6b8c
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Fri Dec 10 23:55:22 2010 -0500
+
+    Squashed commits for 2.6.35.11
+
+commit 44ea8d93b3bfe0e7d0d5a829a486e85ca1638bbd
+Author: Mike Chan <mike@android.com>
+Date:   Tue Jan 26 17:06:47 2010 -0800
+
+    [CPUFREQ] ondemand: Refactor frequency increase code
+    
+    Make simpler to read and call.
+    
+    *** v3 - Always call when powersave_bias is enabled.
+    
+    Acked-by: Venkatesh Pallipadi <venkatesh.pallipadi@intel.com>
+    Signed-off-by: Mike Chan <mike@android.com>
+    Signed-off-by: Dave Jones <davej@redhat.com>
+
+commit 935fd0650743f6b68b256d671b2e5446cd90de61
+Author: jp <jp@gmail.com>
+Date:   Tue Aug 17 02:59:24 2010 -0700
+
+    msm7227: Overclocking support to 864MHz
+    
+    fix stepping from 400 to 768
+    
+    added all frequencies although them commented out.
+    
+    fix so all frequencies should work together
+
+commit 04552cb8ef0a00d5387c1e600cdb3431a909ad70
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Wed May 18 14:10:42 2011 +0200
+
+    Set min/max ondemand frequencies if defined in config
+
+commit bb6f529bc11108312961f7ea3c66aef42e990fcf
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Wed May 18 13:17:30 2011 +0200
+
+    Export alarm functions
+    
+    These symbols are needed to load the out of tree tiwlan_drv module.
+
+commit 93fdcc5c91165ac33454f0a3c9f5a99075d514da
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Wed May 18 08:59:17 2011 +0200
+
+    Fix init of curcial optical joystick
+    
+    Checking for my_oj->device_id didn't seem to work properly.
+
+commit 685aad8c6ddc96857f0a4ced40bbcba4693e9e28
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Wed May 18 08:45:46 2011 +0200
+
+    msm_mdp.h: Don't break our userspace
+
+commit 936d4fcdf2618784171d0443f0e28539564c9c23
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Tue May 17 23:20:56 2011 +0200
+
+    Add default config for Legend
+
+commit db18aee9e4e5aa032936ad57af3bb340167b141b
+Author: Chia-chi Yeh <chiachi@android.com>
+Date:   Fri Apr 15 15:22:09 2011 -0700
+
+    net: Reorder incoming packets in PPPoLAC and PPPoPNS.
+    
+    PPP handles packet loss but does not work with out of order packets.
+    This change performs reordering of incoming data packets within a
+    sliding window of one second. Since sequence number is optional,
+    receiving a packet without it will drop all queued packets.
+    
+    Currently the logic is triggered by incoming packets, so queued
+    packets have to wait till another packet is arrived. It is done for
+    simplicity since no additional locks or threads are required. For
+    reliable protocols, a retransmission will kick it. For unreliable
+    protocols, queued packets just seem like packet loss. Time-critical
+    protocols might be broken, but they never work with queueing anyway.
+    
+    Signed-off-by: Chia-chi Yeh <chiachi@android.com>
+
+commit 28e442756791e2d3248cc2368c04a3e7657d6063
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Tue May 17 16:15:03 2011 +0200
+
+    Remove mute_switch from msm7k gadget code
+
+commit c2e6f8a7a625c13930244202dd3540434c86b61f
+Author: Chiranjeevi Velempati <cvelempa@codeaurora.org>
+Date:   Fri May 13 13:37:44 2011 +0200
+
+    USB: f_mass_storage: Disable write cache support
+    
+    As part of mode sense CBW command, communicate to the
+    host that write cache support is enabled and due to this
+    during the write commnd, the host is asking for FUA and
+    because of this write performance is degrading. Hence during
+    mode sense command, intimate the host that write cache is not
+    supported.
+
+commit 5d4d116e75412aa22724ebf44306f21fb9dc646a
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Tue May 17 01:14:20 2011 -0400
+
+    drivers: usb: Port Google's gadget code
+    
+      * HTC's default gadget support is very Sense-specific. Kill it
+        in favor of Google's implementation.
+      * This also enables USB accessory support.
+
+commit e345d457b47bea0614e6fe2e12997a40c9886d3e
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Mon May 16 02:29:37 2011 +0200
+
+    Forward port Legend files
+
+commit 394c0781ab575490a47bf57fa4991c144b51cc9d
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Wed Dec 1 09:37:15 2010 -0500
+
+    yaffs2: Import YAFFS2 as of Wed Dec 1 13:51:27 2010 +1300
+
+commit c98197b551fbd32cf748a540d5aac6e3295ca85c
+Author: snq- <snq.xda@gmail.com>
+Date:   Sat Mar 5 16:00:58 2011 +0100
+
+    Fix kernel compression support
+
+commit bd53301de0435c144fb5a0ce89eb6c46a29e73b1
+Author: Colin Cross <ccross@android.com>
+Date:   Fri Jan 28 19:32:31 2011 -0800
+
+    cpufreq: Prevent memory leak in cpufreq_stats on hotplug
+    
+    Ensures that cpufreq_stats_free_table is called before
+    __cpufreq_remove_dev on cpu hotplug (which also occurs during
+    suspend on SMP systems) to make sure that sysfs_remove_group
+    can get called before the cpufreq kobj is freed.  Otherwise,
+    the sysfs file structures are leaked.
+    
+    Change-Id: I87e55277272f5cfad47e9e7c92630e990bb90069
+    Signed-off-by: Colin Cross <ccross@android.com>
+
+commit 105c3eccaaef4cee54c255e49291b397042f0e68
+Author: Benoit Goby <benoit@android.com>
+Date:   Wed Jan 19 14:10:37 2011 -0800
+
+    input: evdev: Add missing wake_lock_destroy
+    
+    Change-Id: Ief1ef44d98a197e5b457f5e8617c413e76e3c6d2
+    Signed-off-by: Benoit Goby <benoit@android.com>
+
+commit 235d0bc34a8072486e2efcc1554a34823c10b8c1
+Author: Todd Poynor <toddpoynor@google.com>
+Date:   Mon Nov 8 20:26:23 2010 -0800
+
+    ARM: Stop irqsoff trace on return to user
+    
+    If the irqsoff tracer is in use, stop tracing the interrupt disable
+    interval when returning to userspace.  Tracing userspace execution
+    time as interrupts disabled time is not helpful for kernel
+    performance analysis purposes.  Only do so if the irqsoff tracer
+    is enabled, to avoid overhead purely for lockdep, which doesn't
+    care.
+    
+    Change-Id: I74cde7dd0c4c3a783af34e76bd4efc1f85315abe
+    Signed-off-by: Todd Poynor <toddpoynor@google.com>
+
+commit a8808767972c91205beb5bb1576ea9aca30012d3
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Tue Jul 13 19:42:16 2010 -0400
+
+    pmem: Add PMEM_CACHE_FLUSH ioctl.
+
+commit 7ef96596d80a1ff3085de4bb9da152afdfcfe649
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Tue Nov 30 18:39:25 2010 -0500
+
+    modules: Add CONFIG_MODULE_FORCE_VERMAGIC
+    
+    Very evil option for allowing force-loading of modules with bad
+    vermagic. Normally this should never be required.
+
+commit 6aa4d63519767901d57b1a3354736249568cc782
+Author: Shubhraprakash Das <sadas@quicinc.com>
+Date:   Mon Nov 1 03:38:55 2010 -0400
+
+    msm_kgsl: Optimize TLB flushing
+    
+    Only flush TLB when it is absolutely nessasary as opposed to
+    flushing it on every map and unmap
+
+commit 7a84dcf907de4f10cd4ee4f123399e484262abac
+Author: Shubhraprakash Das <sadas@quicinc.com>
+Date:   Mon Nov 1 03:19:26 2010 -0400
+
+    msm_kgsl: Restore the shader when CTXT_FLAGS_SHADER_RESTORE flag is set
+
+commit 250258840cc39caa6547efbab7fd86eccdeb08ca
+Author: Ken Sumrall <ken@android.com>
+Date:   Thu Jul 22 17:36:52 2010 -0700
+
+    [ARM] msm: kgsl: Remove support for mmap from the kgsl driver.
+    
+    The mmap(2) functionality of kgsl is no longer used, and it had a
+    bug that would crash the kernel when mmap(2) was called with
+    "odd" parameters.  So we have removed the mmap functionality.
+    If for some reason in the future you want to resurrect this,
+    make sure memdesc is properly initialized in all paths through
+    the kgsl_mmap() routine.
+    
+    Signed-off-by: Ken Sumrall <ken@android.com>
+
+commit 818630a1d44e22278841340379b66dfeb7eac28d
+Author: Steve Kondik <shade@discord.hmsinc.com>
+Date:   Wed Feb 17 12:59:29 2010 -0500
+
+    Add USB_ANDROID_RNDIS_WCEIS option.
+    
+    Change-Id: I85973ebfcbfae6b401fb8b402842309c72655149
+    Signed-off-by: Mike Lockwood <lockwood@android.com>
+
+commit fa98789496565b5ed3c44ce92a20071b242f68d7
+Author: Steve Kondik <shade@chemlab.org>
+Date:   Fri Nov 12 03:23:30 2010 -0500
+
+    msm: flashlight: Add DEATH_RAY mode
+    
+    Conflicts:
+    
+    	arch/arm/mach-msm/msm_flashlight.c
+
+commit d480898af1686b1d7731b5ec65d69fcc19d2473c
+Author: San Mehat <san@google.com>
+Date:   Wed Apr 21 08:14:47 2010 -0700
+
+    md: dm-crypt: Add option to re-use a new global work-queue.
+    
+    Typically, dm-crypt instances each have their own set of kcrypt/kcrypt_io
+    work-queues. This patch adds an option which will create one set of
+    work-queues on init, and re-uses them for all dm-crypt target instances
+    in order to cut down on resource overhead on embedded systems.
+    
+    NOTE: If you use stacked dm-crypt instances, then enabling this option
+    may cause a deadlock.
+    
+    Cc: Milan Broz <mbroz@redhat.com>
+    Cc: Brian Swetland <swetland@google.com>
+    Cc: Andrew Morton <apkm@linux-foundation.org>
+    Cc: Christophe Saout <christophe@saout.de>
+    Signed-off-by: San Mehat <san@google.com>
+
+commit 5457cc20d3abc1d88d76a87e6fe88d66c2688f33
+Author: Alexander Hofbauer <alex@derhofbauer.at>
+Date:   Sun May 15 16:17:17 2011 +0200
+
+    Initial import from marvel-2.6.35-crc.tar.gz
