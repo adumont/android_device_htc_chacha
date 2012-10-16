@@ -36,16 +36,6 @@ debug.sf.hw=1
 # You need at least 2 for page flipping. The limit is what the kernel provides.
 #debug.gr.numframebuffers=2
 
-###
-# The density in DPI of the LCD of this board. This is used to scale the UI.
-#
-# 160 (default)
-#ro.sf.lcd_density=240
-
-#debug.enabletr=true
-debug.qctwa.statusbar=1
-debug.qctwa.preservebuf=1
-
 # cm qcom build lub
 com.qc.hardware=true
 com.qc.hdmi_out=false
@@ -54,9 +44,6 @@ com.qc.hdmi_out=false
 # USB
 ###################
 
-###
-# USB Mount
-persist.sys.usb.config=mass_storage,adb
 persist.service.adb.enable=1
 
 # htc ril
@@ -75,48 +62,11 @@ ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420
 ro.ril.enable.sdr=1
 ro.ril.enable.amr.wideband=0
 ro.ril.hep = 1
-ro.ril.enable.dtm = 0
 ro.ril.hsdpa.category = 8
 
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
 
-rild.libpath=/system/lib/libhtc_ril.so
-# RilLibPath for Ganlite by Godel_Chen
-rilswitch.vendorlibpath=/system/lib/libhtc_ril.so
-rild.libpath=/system/lib/libreference-ril.so
-rild.libargs=-d /dev/smd0
-
-# Time between scans in seconds. Keep it high to minimize battery drain.
-# This only affects the case in which there are remembered access points,
-# but none are in range.
-wifi.supplicant_scan_interval = 15
-
-ro.com.google.locationfeatures=1
-
-# The OpenGL ES API level that is natively supported by this device.
-# This is a 16.16 fixed point number
-ro.opengles.version = 131072
-
-dalvik.vm.dexopt-data-only=1
-
-# Default network type
-# 0 => WCDMA Preferred.
-ro.telephony.default_network = 0
-# Enable old RIL features
-ro.telephony.ril.v3 = signalstrength,skipbrokendatacall
-
-# View configuration for QVGA
-view.fading_edge_length = 8
-view.touch_slop = 15
-view.minimum_fling_velocity = 100
-view.scroll_friction = 0.002
-
-# For SD storage insert notification sound
-persist.service.mount.playsnd = 0
-
-# For the agps default value
-ro.ril.def.agps.mode = 2
 # For 7227 projects ,default enable AMR-Wideband (Sam@1231: WSD request to disable it by default)
 # ro.ril.enable.amr.wideband = 1
 
@@ -124,39 +74,11 @@ ro.ril.def.agps.mode = 2
 ro.workaround.noautofocus = 1
 debug.camcorder.disablemeta = 1
 
-# default value of brightness
-settings.display.brightness=143
-
 # For HSDPA low throughput
 ro.ril.disable.power.collapse = 1
 
 # For PDP overlap problem
 ro.ril.avoid.pdp.overlap = 1
 
-# Release Bluetooth HW/SW information
-ro.bt.chipset = Broadcom BCM4329-B1
-ro.bt.version = Bluetooth 2.1 + EDR
-ro.bt.stack = Broadcom BTL-A
-ro.bt.stack.version = 2.2.017
-#0x10000010010100100000011 represent bt profile list
-ro.bt.profiles = 4270339
-
-# Properties of BTLA stack
-service.brcm.bt.activation = 0
-service.brcm.bt.srv_active = 0
-service.brcm.bt.hcid_active = 0
-service.brcm.bt.avrcp_pass_thru = 0
-service.brcm.bt.avrcp_toggle = 1
-
-# Following property will be reference by Settings.
-ro.product.processor=600MHz
-ro.product.ram=512MB
-ro.product.display_resolution=3.2 inch HVGA resolution
-ro.product.main_camera=5M
-ro.product.front_camera=NA
-ro.product.bluetooth= 3.0
-ro.product.wifi = 802.11 b/g/n
-
 # update the acoustic table for Buzz NEL lab testing
 ro.ril.update.acoustic.table = 1
-
