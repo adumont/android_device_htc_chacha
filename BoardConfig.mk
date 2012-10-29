@@ -61,3 +61,6 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/htc/chacha/recovery/graphics.c
 BOARD_USES_MMCUTILS := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_NO_MISC_PARTITION := true
+
+# Custom squisher for now
+TARGET_CUSTOM_RELEASETOOL := device/htc/chacha/releasetools/squisher
