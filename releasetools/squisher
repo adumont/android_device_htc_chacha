@@ -25,6 +25,10 @@ if [ -z "$OUT" -o ! -d "$OUT" ]; then
 	exit 1
 fi
 
+if [ -z "$OTAPACKAGE" ]; then
+   OTAPACKAGE=$OUT/cm_chacha-ota-eng.adumont.zip
+fi
+
 if [ ! -f "$OTAPACKAGE" ]; then
 	echo -e $CL_RED"$OTAPACKAGE doesn't exist!"$CL_RST;
 	exit 1
@@ -43,11 +47,56 @@ echo
 
 # Unpack the otapackage and opticharge all apks
 mkdir $REPACK/ota
-(
+
 cd $REPACK/ota
 printf "Unpacking $OTAPACKAGE..."
 unzip $QUIET $OTAPACKAGE
 echo
+
+# Chacha: Trim LatinIME.apk
+7za d -tzip system/app/LatinIME.apk \
+	res/drawable-hdpi \
+	res/drawable-xhdpi \
+	res/xml-sw600dp* \
+	res/xml-sw768dp* \
+	res/raw/main_cs.dict \
+	res/raw/main_da.dict \
+	res/raw/main_el.dict \
+	res/raw/main_fi.dict \
+	res/raw/main_hr.dict \
+	res/raw/main_hu.dict \
+	res/raw/main_iw.dict \
+	res/raw/main_ka.dict \
+	res/raw/main_nb.dict \
+	res/raw/main_nl.dict \
+	res/raw/main_pt_br.dict \
+	res/raw/main_pt_pt.dict \
+	res/raw/main_ru.dict \
+	res/raw/main_sv.dict
+
+# Chacha: remove unused apps off CM zip for now
+( 
+	# Not so useful apks
+	rm system/app/CMWallpapers{.apk,.odex}
+	rm system/app/Calculator{.apk,.odex}
+	rm system/app/Galaxy4{.apk,.odex}
+	rm system/app/HoloSpiralWallpaper{.apk,.odex}
+	rm system/app/LiveWallpapers{.apk,.odex}
+	rm system/app/LiveWallpapersPicker{.apk,.odex}
+	rm system/app/MagicSmokeWallpapers{.apk,.odex}
+	rm system/app/NoiseField{.apk,.odex}
+	rm system/app/PhaseBeam{.apk,.odex}
+	rm system/app/SoundRecorder{.apk,.odex}
+	rm system/app/SpeechRecorder{.apk,.odex}
+	rm system/app/ThemeChooser{.apk,.odex}
+	rm system/app/ThemeManager{.apk,.odex}
+	rm system/app/VideoEditor{.apk,.odex}
+	rm system/app/VisualizationWallpapers{.apk,.odex}
+	
+	# Videos?
+	rm -r system/media/video
+
+)  2>/dev/null
 
 # Move all apks to the same directory so xargs can
 # use also with framework-res.apk. This allow process
@@ -67,7 +116,6 @@ mv -f $REPACK/parallel/*.apk $REPACK/ota/system/app/
 # Return to directory
 cd $REPACK/ota
 rm -rf $REPACK/parallel
-)
 
 # Fix build.prop
 $SED -i \
