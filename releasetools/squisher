@@ -140,8 +140,18 @@ OUTFILE=$OUT/cm-$MODVERSION.zip
 echo -e $CL_CYN"MODVERSION: $MODVERSION"$CL_RST
 
 # Pack it up and sign
+
 printf "Zipping package..."
-( cd $REPACK/ota; zip $QUIET -r $REPACK/update.zip . )
+cd $REPACK/ota
+
+if which 7za &>/dev/null
+then
+   7za a -tzip -mx9 -mmt $REPACK/update.zip .
+else
+   zip $QUIET -r -9 $REPACK/update.zip . 
+fi
+cd -
+
 echo
 printf "Signing package..."
 SECURITYDIR=$ANDROID_BUILD_TOP/build/target/product/security
@@ -155,7 +165,7 @@ rm -rf $REPACK
 echo
 
 # Create a md5 checksum image of the repacked package
-(
+
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 $MD5 $img >$img.md5sum
@@ -163,6 +173,5 @@ echo
 echo -e $CL_GRN"Package complete: $OUTFILE"$CL_RST
 cat $img.md5sum
 echo
-)
 
 exit 0
