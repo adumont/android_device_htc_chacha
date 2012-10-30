@@ -64,3 +64,6 @@ BOARD_HAS_NO_MISC_PARTITION := true
 
 # Custom squisher for now
 TARGET_CUSTOM_RELEASETOOL := device/htc/chacha/releasetools/squisher
+
+# Odex build
+WITH_DEXPREOPT := true

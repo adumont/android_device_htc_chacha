@@ -118,6 +118,9 @@ PRODUCT_PACKAGES += \
     lights_chacha \
     gps.chacha
 
+# Odex build
+DISABLE_DEXPREOPT := false
+
 # kernel
 TARGET_PREBUILT_KERNEL := device/htc/chacha/kernel/zImage
 PRODUCT_COPY_FILES += \
