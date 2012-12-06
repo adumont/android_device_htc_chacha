@@ -4,7 +4,23 @@
 # cyanogen
 #
 
-. $ANDROID_BUILD_TOP/vendor/cm/tools/functions
+CL_RED="\033[31m"
+CL_GRN="\033[32m"
+CL_YLW="\033[33m"
+CL_BLU="\033[34m"
+CL_MAG="\033[35m"
+CL_CYN="\033[36m"
+CL_RST="\033[0m"
+
+if [ -d $ANDROID_BUILD_TOP/vendor/cm ]
+then
+   TEAM=cm
+fi
+
+if [ -d $ANDROID_BUILD_TOP/vendor/osr ]
+then
+   TEAM=osr
+fi
 
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
@@ -43,7 +59,6 @@ printf "Sanitizing environment..."
 rm -rf $REPACK
 mkdir -p $REPACK
 echo
-
 
 # Unpack the otapackage and opticharge all apks
 mkdir $REPACK/ota
@@ -135,8 +150,8 @@ rm -rf $REPACK/ota/recovery
 	find $REPACK/ota/system/lib/modules -name "*.ko" -print0 | xargs -0 arm-eabi-strip --strip-unneeded
 
 # Determine what to name the new signed package
-MODVERSION=`sed -n -e'/ro\.cm\.version/s/^.*=//p' $REPACK/ota/system/build.prop`
-OUTFILE=$OUT/cm-$MODVERSION.zip
+MODVERSION=$( sed -n -e"/ro\.${TEAM}\.version/s/^.*=//p" $REPACK/ota/system/build.prop )
+OUTFILE=$OUT/${TEAM}-$MODVERSION.zip
 echo -e $CL_CYN"MODVERSION: $MODVERSION"$CL_RST
 
 # Pack it up and sign
