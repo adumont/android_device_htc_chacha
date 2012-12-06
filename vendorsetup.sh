@@ -22,5 +22,14 @@
 
 #add_lunch_combo generic_chacha-userdebug
 #add_lunch_combo generic_chacha-eng
-add_lunch_combo cm_chacha-userdebug
-add_lunch_combo cm_chacha-eng
+
+if [ -d vendor/cm/config ]
+then
+   add_lunch_combo cm_chacha-userdebug
+   add_lunch_combo cm_chacha-eng
+fi
+
+if [ -d vendor/osr/config ]
+then
+   add_lunch_combo osr_chacha-eng
+fi

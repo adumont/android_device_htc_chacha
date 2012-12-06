@@ -17,5 +17,10 @@
 # configurations which are actually buildable (e.g. through lunch)
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cm.mk
+ifneq "" "$(wildcard vendor/osr/config/*.mk)"
+    PRODUCT_MAKEFILES := $(LOCAL_DIR)/osr_chacha.mk
+endif
+
+ifneq "" "$(wildcard vendor/cm/config/*.mk)"
+    PRODUCT_MAKEFILES := $(LOCAL_DIR)/cm.mk
+endif

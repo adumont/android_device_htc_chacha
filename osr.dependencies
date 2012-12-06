@@ -1,0 +1,32 @@
+[
+  {
+    "repository": "android_vendor_htc_chacha",
+    "target_path": "vendor/htc/chacha",
+    "remote": "assembla",
+    "revision": "ics"
+  },
+  {
+    "repository": "CyanogenMod/android_device_htc_common",
+    "target_path": "device/htc/common",
+    "remote": "github",
+    "revision": "refs/heads/gingerbread"
+  },
+  {
+    "repository": "projects/marvel/android_device_htc_msm7x27-common.git",
+    "target_path": "device/htc/msm7x27-common",
+    "remote": "cryptomilk",
+    "revision": "jellybean"
+  },
+  {
+    "repository": "projects/marvel/android_vendor_qcom_msm7x27.git",
+    "target_path": "vendor/qcom/msm7x27",
+    "remote": "cryptomilk",
+    "revision": "jellybean"
+  },
+  {
+    "repository": "WinSuk/android_hardware_qcom_display",
+    "target_path": "hardware/qcom/display",
+    "remote": "github",
+    "revision": "jellybean"
+  }
+]
