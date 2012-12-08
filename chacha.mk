@@ -111,7 +111,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.dec.vid.wmv.enabled=1 \
     dalvik.vm.dexopt-flags=m=y \
     net.bt.name=Android \
-    ro.config.sync=yes
+    ro.config.sync=yes \
+    ro.telephony.ril.v3=signalstrength,skipbrokendatacall
 
 # Add device specific modules
 PRODUCT_PACKAGES += \
