@@ -107,11 +107,23 @@ echo
 	rm system/app/ThemeManager{.apk,.odex}
 	rm system/app/VideoEditor{.apk,.odex}
 	rm system/app/VisualizationWallpapers{.apk,.odex}
+
+	# Not so useful tools
+	rm system/xbin/nc
+	rm system/xbin/vim
+	rm system/xbin/tcpdump
+	rm system/xbin/showslab
+	rm system/xbin/htop
 	
 	# Videos?
 	rm -r system/media/video
 
 )  2>/dev/null
+
+(  cd $REPACK/ota/META-INF/com/google/android
+   grep -v /system/xbin/tcpdump updater-script > updater-script.2
+   mv updater-script.2 updater-script
+)
 
 # Move all apks to the same directory so xargs can
 # use also with framework-res.apk. This allow process
