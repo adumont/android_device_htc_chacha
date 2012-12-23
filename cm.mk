@@ -19,12 +19,15 @@ PRODUCT_VERSION_DEVICE_SPECIFIC := -ADLX-$(PRODUCT_VERSION_DEVICE_RELEASE)
 
 # CM_RELEASE := true
 CM_BUILDTYPE := UNOFFICIAL
-CM_EXTRAVERSION := ADLX-$(PRODUCT_VERSION_DEVICE_RELEASE)
 
-BUILD_ID := ADLX00$(shell date -u +%Y%m%d)
+ifdef BUILD_TAG
+   BUILD_ID := $(shell date -u +%Y%m%d)
+else
+   BUILD_ID := $(shell date -u +%Y%m%d)-$(BUILD_TAG)
+endif
 
 # Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_chacha BUILD_ID=$(BUILD_ID) BUILD_DISPLAY_ID=$(BUILD_ID) BUILD_FINGERPRINT=cyanogenmod/htc_chacha/chacha:4.1.1/ADLX$(BUILD_ID)/0.1:user/release-keys PRIVATE_BUILD_DESC="2.13.401.2 CL197017 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_chacha BUILD_ID=$(BUILD_ID) BUILD_DISPLAY_ID=$(BUILD_ID) BUILD_FINGERPRINT=cyanogenmod/htc_chacha/chacha:4.1.1/$(BUILD_ID)/0.1:user/release-keys PRIVATE_BUILD_DESC="2.13.401.2 CL197017 release-keys"
 
 PRODUCT_LOCALES := \
     en_US \

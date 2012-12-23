@@ -50,6 +50,11 @@ PRODUCT_PACKAGES += \
 
 ### System properties
 
+# Jenkins info
+ifdef BUILD_TAG
+    PRODUCT_PROPERTY_OVERRIDES += ro.jenkins.BUILD_TAG=$(BUILD_TAG)
+endif
+
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib/libhtc_ril.so
