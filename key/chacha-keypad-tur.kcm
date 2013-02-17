@@ -35,8 +35,8 @@ key B {
     number:                             none
     base:                               'b'
     shift, capslock:                    'B'
-    alt:                                '\''
-    shift+alt, capslock+alt:            '\''
+    alt:                                '\u015f'
+    shift+alt, capslock+alt:            '\u015e'
 }
 
 key C {
@@ -80,8 +80,8 @@ key G {
     number:                             none
     base:                               'g'
     shift, capslock:                    'G'
-    alt:                                '/'
-    shift+alt, capslock+alt:            '/'
+    alt:                                '\u011f'
+    shift+alt, capslock+alt:            '\u011e'
 }
 
 key H {
@@ -98,8 +98,8 @@ key I {
     number:                             none
     base:                               'i'
     shift, capslock:                    'I'
-    alt:                                '%'
-    shift+alt, capslock+alt:            '%'
+    alt:                                '\u0131'
+    shift+alt, capslock+alt:            '\u0130'
 }
 
 key J {
@@ -134,8 +134,8 @@ key M {
     number:                             none
     base:                               'm'
     shift, capslock:                    'M'
-    alt:                                ':'
-    shift+alt, capslock+alt:            ':'
+    alt:                                '\''
+    shift+alt, capslock+alt:            '\''
 }
 
 key N {
@@ -152,8 +152,8 @@ key O {
     number:                             none
     base:                               'o'
     shift, capslock:                    'O'
-    alt:                                '&'
-    shift+alt, capslock+alt:            '&'
+    alt:                                '\u00f6'
+    shift+alt, capslock+alt:            '\u00d6'
 }
 
 key P {
@@ -161,8 +161,8 @@ key P {
     number:                             none
     base:                               'p'
     shift, capslock:                    'P'
-    alt:                                '@'
-    shift+alt, capslock+alt:            '@'
+    alt:                                '$'
+    shift+alt, capslock+alt:            '$'
 }
 
 key Q {
@@ -203,11 +203,11 @@ key T {
 
 key U {
     label:                              'U'
-    number:                             '$'
+    number:                             none
     base:                               'u'
     shift, capslock:                    'U'
-    alt:                                '$'
-    shift+alt, capslock+alt:            '$'
+    alt:                                '\u00fc'
+    shift+alt, capslock+alt:            '\u00dc'
 }
 
 key V {
@@ -215,8 +215,8 @@ key V {
     number:                             none
     base:                               'v'
     shift, capslock:                    'V'
-    alt:                                '\u20ac'
-    shift+alt, capslock+alt:            '\u20ac'
+    alt:                                '\u00e7'
+    shift+alt, capslock+alt:            '\u00c7'
 }
 
 key W {
@@ -242,8 +242,8 @@ key Y {
     number:                             none
     base:                               'y'
     shift, capslock:                    'Y'
-    alt:                                '\u00a3'
-    shift+alt, capslock+alt:            '\u00a3'
+    alt:                                '@'
+    shift+alt, capslock+alt:            '@'
 }
 
 key Z {
@@ -269,8 +269,8 @@ key PERIOD {
     number:                             '.'
     base:                               '.'
     shift, capslock:                    '.'
-    alt:                                ':'
-    shift+alt:                          ':'
+    alt:                                ';'
+    shift+alt:                          ';'
 }
 
 key AT {
@@ -287,8 +287,8 @@ key SLASH {
     number:                             '?'
     base:                               '?'
     shift, capslock:                    '?'
-    alt:                                ';'
-    shift+alt, capslock+alt:            ';'
+    alt:                                ':'
+    shift+alt, capslock+alt:            ':'
 }
 
 key SPACE {
