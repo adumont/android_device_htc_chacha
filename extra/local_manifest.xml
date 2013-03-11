@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="cryptomilk" fetch="git://git.cryptomilk.org/" />
+
+  <!-- Chacha: -->
+  <project path="vendor/htc/chacha" name="adumont/android_vendor_htc_chacha" revision="ics" />
+  <project path="device/htc/chacha" name="adumont/android_device_htc_chacha" revision="ics" />
+
+  <project name="CyanogenMod/android_device_htc_common" path="device/htc/common" revision="refs/heads/gingerbread" />
+
+</manifest>
