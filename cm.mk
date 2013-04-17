@@ -40,4 +40,7 @@ PRODUCT_LOCALES := \
     it_IT \
     pt_PT \
     pt_BR \
+    ko_KR \
+    tr_TR \
+    ja_JP \
     mdpi
