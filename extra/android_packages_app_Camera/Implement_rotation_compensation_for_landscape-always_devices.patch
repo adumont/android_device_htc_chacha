@@ -1,0 +1,84 @@
+From 837bad4110c74f033178911ae5af91c752ba63eb Mon Sep 17 00:00:00 2001
+From: Alexandre Dumont <adumont@gmail.com>
+Date: Wed, 27 Jun 2012 01:27:40 +0200
+Subject: [PATCH] Implement rotation compensation for landscape-always devices
+
+Adjusts the pictures/videos according to the valor of the config integer
+deviceScreenRotation (value in 0, 90, 180, 270).
+
+Example of use: HTC Chacha, device with always fixed open keyboard and landscape screen.
+Without the use of that property, all pictures and videos taken are rotated 90 degrees.
+Setting deviceScreenRotation to 90 will correct the issue.
+
+Corresponding patch merged in CM7 was Change-Id: I04f3d81a0d96b6e7c98121b1fa6fe88975580f97
+
+Change-Id: I68377e0a71f40a9a589ab1bfce0204e2d61d26ce
+---
+ res/values/config.xml            |  2 ++
+ src/com/android/camera/Util.java | 14 ++++++++++----
+ 2 files changed, 12 insertions(+), 4 deletions(-)
+
+diff --git a/res/values/config.xml b/res/values/config.xml
+index 54bf866..3ec93b6 100644
+--- a/res/values/config.xml
++++ b/res/values/config.xml
+@@ -39,5 +39,7 @@
+     <bool name="noFaceDetectOnRearCamera">false</bool>
+     <!-- Use ZSL mode -->
+     <bool name="enableZSL">false</bool>
++    <!-- Compensation of the device's screen orientation (0, 90, 180, 270) -->
++    <integer name="deviceScreenRotation">0</integer>
+ </resources>
+ 
+diff --git a/src/com/android/camera/Util.java b/src/com/android/camera/Util.java
+index e900ea0..fb205a4 100644
+--- a/src/com/android/camera/Util.java
++++ b/src/com/android/camera/Util.java
+@@ -100,6 +100,9 @@ public class Util {
+     private static boolean sNoFaceDetectOnFrontCamera;
+     private static boolean sNoFaceDetectOnRearCamera;
+     
++    // Enables to compensate the screen rotation
++    private static int sDeviceScreenRotation;
++
+     private Util() {
+     }
+ 
+@@ -121,6 +124,9 @@ public class Util {
+         sEnableZSL = context.getResources().getBoolean(R.bool.enableZSL);
+         sNoFaceDetectOnFrontCamera = context.getResources().getBoolean(R.bool.noFaceDetectOnFrontCamera);
+         sNoFaceDetectOnRearCamera = context.getResources().getBoolean(R.bool.noFaceDetectOnRearCamera);
++
++        sDeviceScreenRotation = context.getResources().getInteger(R.integer.deviceScreenRotation);
++
+     }
+ 
+     public static boolean needsEarlyVideoSize() {
+@@ -388,10 +394,10 @@ public class Util {
+         Camera.getCameraInfo(cameraId, info);
+         int result;
+         if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+-            result = (info.orientation + degrees) % 360;
++            result = (info.orientation + degrees + sDeviceScreenRotation ) % 360;
+             result = (360 - result) % 360;  // compensate the mirror
+         } else {  // back-facing
+-            result = (info.orientation - degrees + 360) % 360;
++            result = (info.orientation - degrees - sDeviceScreenRotation + 360) % 360;
+         }
+         return result;
+     }
+@@ -679,9 +685,9 @@ public class Util {
+         if (orientation != OrientationEventListener.ORIENTATION_UNKNOWN) {
+             CameraInfo info = CameraHolder.instance().getCameraInfo()[cameraId];
+             if (info.facing == CameraInfo.CAMERA_FACING_FRONT) {
+-                rotation = (info.orientation - orientation + 360) % 360;
++                rotation = (info.orientation - orientation + sDeviceScreenRotation + 360) % 360;
+             } else {  // back-facing camera
+-                rotation = (info.orientation + orientation) % 360;
++                rotation = (info.orientation + orientation - sDeviceScreenRotation ) % 360;
+             }
+         }
+         parameters.setRotation(rotation);
+-- 
+1.8.0.1
+

@@ -1,0 +1,73 @@
+From 5e5c6a835795f61662a8cae74eaac06f623f1426 Mon Sep 17 00:00:00 2001
+From: Alexandre Dumont <adumont@gmail.com>
+Date: Wed, 9 May 2012 23:53:10 +0200
+Subject: [PATCH] Prevent Sym key from showing the IME picker
+
+By default InputMethodManager will popup an IME picker when pressing
+the Sym key.
+
+This can be disabled by setting config_symKeyShowsImePicker to false in the
+overlay (so the Sym key will show the symbol windows selector for ex.)
+---
+ .../android/view/inputmethod/InputMethodManager.java     | 16 +++++++++-------
+ core/res/res/values/config.xml                           |  4 ++++
+ core/res/res/values/public.xml                           |  4 ++++
+ 3 files changed, 17 insertions(+), 7 deletions(-)
+
+diff --git a/core/java/android/view/inputmethod/InputMethodManager.java b/core/java/android/view/inputmethod/InputMethodManager.java
+index d2cc2d8..3be512f 100644
+--- a/core/java/android/view/inputmethod/InputMethodManager.java
++++ b/core/java/android/view/inputmethod/InputMethodManager.java
+@@ -1523,14 +1523,16 @@ public final class InputMethodManager {
+                 return;
+             }
+     
+-            if (key.getAction() == KeyEvent.ACTION_DOWN
+-                    && key.getKeyCode() == KeyEvent.KEYCODE_SYM) {
+-                showInputMethodPicker();
+-                try {
+-                    callback.finishedEvent(seq, true);
+-                } catch (RemoteException e) {
++            if (context.getResources().getBoolean(com.android.internal.R.bool.config_symKeyShowsImePicker)) {
++                if (key.getAction() == KeyEvent.ACTION_DOWN
++                        && key.getKeyCode() == KeyEvent.KEYCODE_SYM) {
++                    showInputMethodPicker();
++                    try {
++                        callback.finishedEvent(seq, true);
++                    } catch (RemoteException e) {
++                    }
++                    return;
+                 }
+-                return;
+             }
+             try {
+                 if (DEBUG) Log.v(TAG, "DISPATCH KEY: " + mCurMethod);
+diff --git a/core/res/res/values/config.xml b/core/res/res/values/config.xml
+index 1115e22..3712d23 100755
+--- a/core/res/res/values/config.xml
++++ b/core/res/res/values/config.xml
+@@ -967,4 +967,8 @@
+          the wallpaper width suggestion by the launcher may be too large for
+          the GPU to handle. -->
+     <integer name="config_wallpaperMaxWidth">-1</integer>
++
++    <!-- True if the Sym key should open the InputMethodPicker (default) -->
++    <bool name="config_symKeyShowsImePicker">true</bool>
++
+ </resources>
+diff --git a/core/res/res/values/public.xml b/core/res/res/values/public.xml
+index c3e1828..22d3e5b 100644
+--- a/core/res/res/values/public.xml
++++ b/core/res/res/values/public.xml
+@@ -3935,4 +3935,8 @@
+   <!-- HW rotation lock -->
+   <java-symbol type="string" name="toast_rotation_unlocked" />
+   <java-symbol type="string" name="toast_rotation_locked" />
++
++  <!-- IME Picker showing upon pressing Sym Key -->
++  <java-symbol type="bool" name="config_symKeyShowsImePicker" />
++
+ </resources>
+-- 
+1.8.0
+

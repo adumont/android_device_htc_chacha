@@ -1,0 +1,29 @@
+From 60d3ef710070ee03df8de83f552dd838c123656e Mon Sep 17 00:00:00 2001
+From: Alexandre Dumont <adumont@gmail.com>
+Date: Thu, 25 Oct 2012 22:49:54 +0200
+Subject: [PATCH 2/2] InCallScreen: change orientation to nosensor
+
+This allows the InCallScreen to show in landscape mode
+on devices where it applies (like HTC Chacha)
+
+Change-Id: I8aa67f6497896631fd6fbf3657b0547a497efcb1
+---
+ AndroidManifest.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/AndroidManifest.xml b/AndroidManifest.xml
+index cc8ed03..2eb4e83 100644
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -248,7 +248,7 @@
+             android:label="@string/phoneIconLabel"
+             android:excludeFromRecents="true"
+             android:launchMode="singleInstance"
+-            android:screenOrientation="portrait"
++            android:screenOrientation="nosensor"
+             android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+             android:exported="false">
+         </activity>
+-- 
+1.8.0
+
