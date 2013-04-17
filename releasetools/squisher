@@ -42,7 +42,7 @@ if [ -z "$OUT" -o ! -d "$OUT" ]; then
 fi
 
 if [ -z "$OTAPACKAGE" ]; then
-   OTAPACKAGE=$OUT/cm_chacha-ota-eng.adumont.zip
+   OTAPACKAGE=$OUT/cm_chacha-ota-eng.${USER}.zip
 fi
 
 if [ ! -f "$OTAPACKAGE" ]; then
@@ -69,7 +69,7 @@ unzip $QUIET $OTAPACKAGE
 echo
 
 # Chacha: Trim LatinIME.apk
-7za d -tzip system/app/LatinIME.apk \
+zip -d  system/app/LatinIME.apk \
 	res/drawable-hdpi \
 	res/drawable-xhdpi \
 	res/xml-sw600dp* \
