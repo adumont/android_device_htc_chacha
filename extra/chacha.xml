@@ -5,8 +5,10 @@
   <project name="adumont/android_vendor_htc_chacha" path="vendor/htc/chacha" revision="jellybean" />
   <project name="CyanogenMod/android_device_htc_common" path="device/htc/common" revision="refs/heads/gingerbread" />
 
-  <remove-project path="hardware/qcom/display" name="CyanogenMod/android_hardware_qcom_display" />
-  <project path="hardware/qcom/display" name="WinSuk/android_hardware_qcom_display" revision="jellybean" />
+  <!--
+       <remove-project path="hardware/qcom/display" name="CyanogenMod/android_hardware_qcom_display" />
+       <project path="hardware/qcom/display" name="WinSuk/android_hardware_qcom_display" revision="jellybean" />
+  -->
 
   <project name="projects/marvel/android_device_htc_msm7x27-recovery.git" path="device/htc/msm7x27-recovery" remote="cryptomilk" />
   <project name="projects/marvel/android_device_htc_msm7x27-common.git" path="device/htc/msm7x27-common" remote="cryptomilk" />
