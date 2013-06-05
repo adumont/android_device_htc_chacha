@@ -1,0 +1,76 @@
+From 30ed2f190ae65895ec3df10562d47ffa45cc3d66 Mon Sep 17 00:00:00 2001
+From: Alexandre Dumont <adumont@gmail.com>
+Date: Tue, 4 Jun 2013 19:48:18 +0200
+Subject: [PATCH] Change proximity behaviour for devices with fixed keyboard
+
+The actual behaviour of Phone (ignore proximity sensor and force screen to stay
+on when the keyboard is opened) while correct for a slidding keyboard, is not
+correct in the case of a device with a fixed opened keyboard, like the HTC Chacha.
+
+With this patch, you can indicate in the overlay that the device has a fixed
+keyboard. When done so, the state of the keyboard will be ignored, and the screen
+will be turned on/off based on the proximity sensor.
+
+Change-Id: I3c0b640dd2aade497fd052b2234f2aa185a8221a
+---
+ res/values/config.xml                   |  5 +++++
+ src/com/android/phone/PhoneGlobals.java | 12 +++++++++---
+ 2 files changed, 14 insertions(+), 3 deletions(-)
+
+diff --git a/res/values/config.xml b/res/values/config.xml
+index 445bff0..2750055 100644
+--- a/res/values/config.xml
++++ b/res/values/config.xml
+@@ -132,4 +132,9 @@
+          impossible to dismiss on the Sprint network. -->
+     <bool name="sprint_mwi_quirk">false</bool>
+ 
++    <!-- True if the device has a fixed keyboard (as oposite to a sliding one) so keyboard is
++         always open. Will modify proximity checking behaviour. -->
++    <bool name="config_device_has_fixed_keyboard">false</bool>
++
++
+ </resources>
+diff --git a/src/com/android/phone/PhoneGlobals.java b/src/com/android/phone/PhoneGlobals.java
+index 510104a..410df92 100644
+--- a/src/com/android/phone/PhoneGlobals.java
++++ b/src/com/android/phone/PhoneGlobals.java
+@@ -235,6 +235,9 @@ public class PhoneGlobals extends ContextWrapper
+     /** boolean indicating restoring mute state on InCallScreen.onResume() */
+     private boolean mShouldRestoreMuteOnInCallResume;
+ 
++    // True if the keyboard is fixed (not sliding). Defined in device overlay
++    private boolean mIsKeyboardAlwaysOpen;
++
+     /**
+      * The singleton OtaUtils instance used for OTASP calls.
+      *
+@@ -564,6 +567,9 @@ public class PhoneGlobals extends ContextWrapper
+             // Read platform settings for TTY feature
+             mTtyEnabled = getResources().getBoolean(R.bool.tty_enabled);
+ 
++            // Read platform setting regarding keyboard
++            mIsKeyboardAlwaysOpen = getResources().getBoolean(R.bool.config_device_has_fixed_keyboard);
++
+             // Register for misc other intent broadcasts.
+             IntentFilter intentFilter =
+                     new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+@@ -1160,12 +1166,12 @@ public class PhoneGlobals extends ContextWrapper
+         if (proximitySensorModeEnabled()) {
+             synchronized (mProximityWakeLock) {
+                 // turn proximity sensor off and turn screen on immediately if
+-                // we are using a headset, the keyboard is open, or the device
+-                // is being held in a horizontal position.
++                // we are using a headset, the keyboard is open (unless it is a fixed keyboard),
++                // or the device is being held in a horizontal position.
+                 boolean screenOnImmediately = (isHeadsetPlugged()
+                                                || PhoneUtils.isSpeakerOn(this)
+                                                || isBluetoothHeadsetAudioOn()
+-                                               || mIsHardKeyboardOpen);
++                                               || (mIsHardKeyboardOpen  && !mIsKeyboardAlwaysOpen));
+ 
+                 // We do not keep the screen off when the user is outside in-call screen and we are
+                 // horizontal, but we do not force it on when we become horizontal until the
+-- 
+1.7.12.4
+

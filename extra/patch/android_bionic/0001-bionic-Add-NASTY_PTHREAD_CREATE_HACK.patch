@@ -1,0 +1,66 @@
+From 7eb6b52926148e6f4fc46869c9552867ac57e05b Mon Sep 17 00:00:00 2001
+From: Steve Kondik <shade@chemlab.org>
+Date: Sat, 20 Nov 2010 02:14:51 -0500
+Subject: [PATCH] bionic: Add NASTY_PTHREAD_CREATE_HACK
+
+This is a workaround for bad linkage of proprietary libs on certain
+devices. Thanks to Zinx for tracking it down.
+
+Change-Id: Ice2da9c02c3c84b9ed417e623b248a87b8f9678e
+---
+ libc/Android.mk        | 4 ++++
+ libc/bionic/pthread.c  | 7 +++++++
+ libc/include/pthread.h | 4 ++++
+ 3 files changed, 15 insertions(+)
+
+diff --git a/libc/Android.mk b/libc/Android.mk
+index 78dfebe..3fa7e2f 100644
+--- a/libc/Android.mk
++++ b/libc/Android.mk
+@@ -675,6 +675,10 @@ libc_crt_target_cflags += \
+     -I$(LOCAL_PATH)/include  \
+     -DPLATFORM_SDK_VERSION=$(PLATFORM_SDK_VERSION)
+ 
++ifeq ($(BOARD_USE_NASTY_PTHREAD_CREATE_HACK),true)
++  libc_common_cflags += -DNASTY_PTHREAD_CREATE_HACK
++endif
++
+ # Define some common includes
+ # ========================================================
+ libc_common_c_includes := \
+diff --git a/libc/bionic/pthread.c b/libc/bionic/pthread.c
+index da3a551..f979766 100644
+--- a/libc/bionic/pthread.c
++++ b/libc/bionic/pthread.c
+@@ -381,6 +381,13 @@ int pthread_create(pthread_t *thread_out, pthread_attr_t const * attr,
+     return 0;
+ }
+ 
++#ifdef NASTY_PTHREAD_CREATE_HACK
++int _debug_pthread_create(void *debug0, void *debug1, pthread_t *thread,
++        const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg)
++{
++    return pthread_create(thread, attr, start_routine, arg);
++}
++#endif
+ 
+ int pthread_attr_init(pthread_attr_t * attr)
+ {
+diff --git a/libc/include/pthread.h b/libc/include/pthread.h
+index af0cc5f..e4eaa75 100644
+--- a/libc/include/pthread.h
++++ b/libc/include/pthread.h
+@@ -142,6 +142,10 @@ int pthread_getattr_np(pthread_t thid, pthread_attr_t * attr);
+ 
+ int pthread_create(pthread_t *thread, pthread_attr_t const * attr,
+                    void *(*start_routine)(void *), void * arg);
++#ifdef NASTY_PTHREAD_CREATE_HACK
++int _debug_pthread_create(void *debug0, void *debug1, pthread_t *thread,
++                   const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);
++#endif
+ void pthread_exit(void * retval);
+ int pthread_join(pthread_t thid, void ** ret_val);
+ int pthread_detach(pthread_t  thid);
+-- 
+1.7.12.4
+

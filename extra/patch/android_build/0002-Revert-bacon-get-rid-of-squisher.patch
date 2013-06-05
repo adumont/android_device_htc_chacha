@@ -1,0 +1,40 @@
+From 65565a1958435836b12335bd7521f66e4b14182e Mon Sep 17 00:00:00 2001
+From: Alexandre Dumont <adumont@gmail.com>
+Date: Thu, 6 Jun 2013 00:15:39 +0200
+Subject: [PATCH 2/2] Revert "bacon: get rid of squisher"
+
+This reverts commit 9e215451006657b1a6de26f83924e207ede99114.
+---
+ core/Makefile | 11 +++++------
+ 1 file changed, 5 insertions(+), 6 deletions(-)
+
+diff --git a/core/Makefile b/core/Makefile
+index cae5d1f..5098311 100644
+--- a/core/Makefile
++++ b/core/Makefile
+@@ -1326,17 +1326,16 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
+ 	   --override_device=$(override_device) \
+ 	   $(BUILT_TARGET_FILES_PACKAGE) $@
+ 
+-CM_TARGET_PACKAGE := $(PRODUCT_OUT)/cm-$(CM_VERSION).zip
+-
+ .PHONY: otapackage bacon
+ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+ bacon: otapackage
+ ifneq ($(TARGET_CUSTOM_RELEASETOOL),)
+-	$(error TARGET_CUSTOM_RELEASETOOL is deprecated)
++	@echo -e ${CL_YLW}"Running custom releasetool..."${CL_RST}
++	$(hide) OTAPACKAGE=$(INTERNAL_OTA_PACKAGE_TARGET) APKCERTS=$(APKCERTS_FILE) $(TARGET_CUSTOM_RELEASETOOL)
++else
++	@echo -e ${CL_YLW}"Running releasetool..."${CL_RST}
++	$(hide) OTAPACKAGE=$(INTERNAL_OTA_PACKAGE_TARGET) APKCERTS=$(APKCERTS_FILE) ./vendor/cm/tools/squisher
+ endif
+-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CM_TARGET_PACKAGE)
+-	$(hide) $(MD5SUM) $(CM_TARGET_PACKAGE) > $(CM_TARGET_PACKAGE).md5sum
+-	@echo -e ${CL_CYN}"Package Complete: $(CM_TARGET_PACKAGE)"${CL_RST}
+ 
+ # -----------------------------------------------------------------
+ # The update package
+-- 
+1.7.12.4
+

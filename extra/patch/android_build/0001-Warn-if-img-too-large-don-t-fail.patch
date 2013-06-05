@@ -1,0 +1,28 @@
+From 1da5251cfa6465e0f784be7970f7b9f67b2dff20 Mon Sep 17 00:00:00 2001
+From: Alexandre Dumont <adumont@gmail.com>
+Date: Thu, 6 Jun 2013 00:15:31 +0200
+Subject: [PATCH 1/2] Warn if img too large, don't fail
+
+Change-Id: Id47397017b786ebed8855e048aac5d159d1c90e7
+---
+ core/definitions.mk | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/core/definitions.mk b/core/definitions.mk
+index a2d22c7..b0abfcc 100644
+--- a/core/definitions.mk
++++ b/core/definitions.mk
+@@ -1942,8 +1942,8 @@ $(if $(2), \
+   maxsize=$$(($(2) - reserve)); \
+   echo "$$printname maxsize=$$maxsize blocksize=$$img_blocksize total=$$total reserve=$$reserve"; \
+   if [ "$$total" -gt "$$maxsize" ]; then \
+-    echo "error: $$printname too large ($$total > [$(2) - $$reserve])"; \
+-    false; \
++    echo "WARNING: $$printname too large ($$total > [$(2) - $$reserve])"; \
++    true; \
+   elif [ "$$total" -gt $$((maxsize - 32768)) ]; then \
+     echo "WARNING: $$printname approaching size limit ($$total now; limit $$maxsize)"; \
+   fi \
+-- 
+1.7.12.4
+
