@@ -103,8 +103,6 @@ zip -d  system/app/LatinIME.apk \
 	rm system/app/PhaseBeam{.apk,.odex}
 	rm system/app/SoundRecorder{.apk,.odex}
 	rm system/app/SpeechRecorder{.apk,.odex}
-	rm system/app/ThemeChooser{.apk,.odex}
-	rm system/app/ThemeManager{.apk,.odex}
 	rm system/app/VideoEditor{.apk,.odex}
 	rm system/app/VisualizationWallpapers{.apk,.odex}
 
