@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote fetch="git://git.cryptomilk.org/" name="cryptomilk" />
-  <project name="adumont/android_device_htc_chacha" path="device/htc/chacha" revision="jellybean" />
+  <project name="adumont/android_device_htc_chacha" path="device/htc/chacha" revision="cm-10.1" />
   <project name="adumont/android_vendor_htc_chacha" path="vendor/htc/chacha" revision="jellybean" />
   <project name="CyanogenMod/android_device_htc_common" path="device/htc/common" revision="refs/heads/gingerbread" />
 
