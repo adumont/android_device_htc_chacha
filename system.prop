@@ -2,48 +2,6 @@
 # system.prop for chacha
 #
 
-###################
-# Graphics
-###################
-
-###
-# When set to 1 this options lets you choose the composition type in gralloc
-# and hwcomposer and changes the pixel format.
-#
-# HAL_PIXEL_FORMAT_RGBX_8888 default or comp.type = mdp
-# HAL_PIXEL_FORMAT_RGBA_8888 if set to 1
-debug.sf.hw=1
-
-###
-# If you turn on debug.sf.hw you can change the composition type
-# with this variable.
-#
-# cpu (default)
-# gpu (default when debug.sf.hw = 1)
-# mdp if your hardware supports MDPv4
-# c2d if you have c2d support
-# dyn use copybit
-# asn upcoming kernel interface
-#debug.composition.type=
-
-###
-# Disable vsync
-#debug.gr.swapinterval=0
-
-###
-# Number of framebuffers
-#
-# You need at least 2 for page flipping. The limit is what the kernel provides.
-#debug.gr.numframebuffers=2
-
-# cm qcom build lub
-com.qc.hardware=true
-com.qc.hdmi_out=false
-
-###################
-# USB
-###################
-
 persist.service.adb.enable=1
 
 # htc ril
@@ -56,13 +14,9 @@ ro.ril.enable.a53.HTC-ITA=1
 ro.phone.min_match.HTC__016=7
 ro.ril.enable.a52=0
 ro.ril.enable.a53=1
-ro.ril.hsdpa.category=8
-ro.ril.hsxpa=1
-ro.ril.disable.fd.plmn.prefix=23402,23410,23411,23420
 ro.ril.enable.sdr=1
 ro.ril.enable.amr.wideband=0
 ro.ril.hep = 1
-ro.ril.hsdpa.category = 8
 
 # Modify MMS APN retry timer from 5s to 2s.
 ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
@@ -72,7 +26,6 @@ ro.gsm.2nd_data_retry_config = max_retries=3, 2000, 2000, 2000
 
 # For no auto focus devices
 ro.workaround.noautofocus = 1
-debug.camcorder.disablemeta = 1
 
 # For HSDPA low throughput
 ro.ril.disable.power.collapse = 1

@@ -55,20 +55,6 @@ ifdef BUILD_TAG
     PRODUCT_PROPERTY_OVERRIDES += ro.jenkins.BUILD_TAG=$(BUILD_TAG)
 endif
 
-# RIL
-PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libhtc_ril.so
-
-# GPS
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ril.def.agps.mode=2
-
-# Interfaces
-PRODUCT_PROPERTY_OVERRIDES += \
-    mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0 \
-    wifi.interface = wlan0 \
-    wifi.supplicant_scan_interval=15
-
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
       media.a1026.nsForVoiceRec            = 0 \

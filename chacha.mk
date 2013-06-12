@@ -74,19 +74,6 @@ PRODUCT_COPY_FILES += \
     device/htc/chacha/init.chacha.rc:root/init.chacha.rc
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libhtc_ril.so \
-    ro.ril.enable.dtm=1 \
-    ro.ril.hsdpa.category=8 \
-    ro.ril.hsupa.category=5 \
-    ro.ril.disable.fd.plmn.prefix=23402,23410,23411 \
-    ro.ril.def.agps.mode=2 \
-    ro.ril.hsxpa=2 \
-    ro.ril.gprsclass=12 \
-    mobiledata.interfaces=rmnet0,rmnet1,rmnet2,gprs,ppp0 \
-    wifi.interface = wlan0 \
-    wifi.supplicant_scan_interval=15 \
-    ro.sf.lcd_density = 160 \
-    ro.opengles.version=131072 \
     ro.htc.camerahack=msm7k
 
 # Default network type.
@@ -94,26 +81,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=0
 
-# For emmc phone storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.phone_storage = 0
-
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/chacha/chacha-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
-    settings.display.autobacklight=1 \
-    settings.display.brightness=143 \
-    persist.service.mount.playsnd = 0 \
-    ro.com.google.locationfeatures = 1 \
-    ro.setupwizard.mode=OPTIONAL \
-    ro.setupwizard.enable_bypass=1 \
-    ro.media.dec.aud.wma.enabled=1 \
-    ro.media.dec.vid.wmv.enabled=1 \
-    dalvik.vm.dexopt-flags=m=y \
     net.bt.name=Android \
-    ro.config.sync=yes \
     ro.telephony.ril.v3=signalstrength,skipbrokendatacall
 
 # Add device specific modules
