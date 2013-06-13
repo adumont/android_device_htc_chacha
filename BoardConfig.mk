@@ -67,3 +67,6 @@ TARGET_CUSTOM_RELEASETOOL := device/htc/chacha/releasetools/squisher
 
 # Odex build
 WITH_DEXPREOPT := true
+BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/chacha/bluetooth/include
+
