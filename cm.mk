@@ -43,4 +43,5 @@ PRODUCT_LOCALES := \
     ko_KR \
     tr_TR \
     ja_JP \
+    zh_CN \
     mdpi
