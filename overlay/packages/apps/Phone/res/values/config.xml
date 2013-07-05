@@ -16,5 +16,5 @@
 
 <resources>
     <!-- Restore proper proximity behaviour -->
-    <bool name="config_device_has_fixed_keyboard">true</bool>
+    <add-resource type="bool" name="config_device_has_fixed_keyboard">true</add-resource>
 </resources>
